@@ -1,0 +1,2090 @@
+
+# Name combination of first and middle name for English females.
+Charlotte B-PERSON
+Lopez I-PERSON
+Emily B-PERSON
+Johnson I-PERSON
+Sophia B-PERSON
+Smith I-PERSON
+Olivia B-PERSON
+Williams I-PERSON
+Isabella B-PERSON
+Davis I-PERSON
+Amelia B-PERSON
+Brown I-PERSON
+Harper B-PERSON
+Martinez I-PERSON
+Evelyn B-PERSON
+Garcia I-PERSON
+Avery B-PERSON
+Rodriguez I-PERSON
+Ella B-PERSON
+Wilson I-PERSON
+Madison B-PERSON
+Martinez I-PERSON
+Lily B-PERSON
+Anderson I-PERSON
+Aria B-PERSON
+Thomas I-PERSON
+Zoe B-PERSON
+Taylor I-PERSON
+Scarlett B-PERSON
+Moore I-PERSON
+Victoria B-PERSON
+Jackson I-PERSON
+Grace B-PERSON
+White I-PERSON
+Chloe B-PERSON
+Harris I-PERSON
+Lillian B-PERSON
+Clark I-PERSON
+Ellie B-PERSON
+Lewis I-PERSON
+Addison B-PERSON
+Young I-PERSON
+Nora B-PERSON
+Walker I-PERSON
+Hazel B-PERSON
+Hall I-PERSON
+Ariana B-PERSON
+Allen I-PERSON
+Brooklyn B-PERSON
+Scott I-PERSON
+Paisley B-PERSON
+Adams I-PERSON
+Layla B-PERSON
+Baker I-PERSON
+Lillian B-PERSON
+Nelson I-PERSON
+Maya B-PERSON
+Carter I-PERSON
+Savannah B-PERSON
+Mitchell I-PERSON
+Audrey B-PERSON
+Perez I-PERSON
+Lila B-PERSON
+Roberts I-PERSON
+Penelope B-PERSON
+Gonzalez I-PERSON
+Lucy B-PERSON
+Collins I-PERSON
+Stella B-PERSON
+Sanchez I-PERSON
+Caroline B-PERSON
+Bennett I-PERSON
+Anna B-PERSON
+Morris I-PERSON
+Bella B-PERSON
+Hernandez I-PERSON
+Mila B-PERSON
+King I-PERSON
+Clara B-PERSON
+Wright I-PERSON
+Sophie B-PERSON
+Lopez I-PERSON
+Zara B-PERSON
+Hill I-PERSON
+Kylie B-PERSON
+Lee I-PERSON
+Luna B-PERSON
+Gonzalez I-PERSON
+Alexa B-PERSON
+Allen I-PERSON
+Maya B-PERSON
+Reed I-PERSON
+Sadie B-PERSON
+Cooper I-PERSON
+Camila B-PERSON
+Morgan I-PERSON
+Emery B-PERSON
+Wood I-PERSON
+Serenity B-PERSON
+Jackson I-PERSON
+Avery B-PERSON
+Nguyen I-PERSON
+Sienna B-PERSON
+Perez I-PERSON
+Kaitlyn B-PERSON
+Price I-PERSON
+Ella B-PERSON
+Parker I-PERSON
+Gianna B-PERSON
+Miller I-PERSON
+Leah B-PERSON
+Stewart I-PERSON
+Autumn B-PERSON
+Chavez I-PERSON
+Eleanor B-PERSON
+Kim I-PERSON
+Riley B-PERSON
+Howard I-PERSON
+Addison B-PERSON
+Duncan I-PERSON
+Kinsley B-PERSON
+Edwards I-PERSON
+Eva B-PERSON
+Wright I-PERSON
+Bella B-PERSON
+Mason I-PERSON
+Savannah B-PERSON
+Sophia B-PERSON
+Cameron I-PERSON
+Olivia B-PERSON
+White I-PERSON
+Gianna B-PERSON
+Lewis I-PERSON
+Natalie B-PERSON
+Roberts I-PERSON
+Aubrey B-PERSON
+Evans I-PERSON
+Violet B-PERSON
+James I-PERSON
+Zoe B-PERSON
+Ramirez I-PERSON
+Hannah B-PERSON
+Howard I-PERSON
+Lila B-PERSON
+Phillips I-PERSON
+Ariana B-PERSON
+Mitchell I-PERSON
+Kaitlyn B-PERSON
+Chavez I-PERSON
+Grace B-PERSON
+Wright I-PERSON
+Eve B-PERSON
+Nelson I-PERSON
+
+# Name for English males.
+John PERSON
+James PERSON
+Robert PERSON
+Michael PERSON
+William PERSON
+David PERSON
+Joseph PERSON
+Charles PERSON
+Thomas PERSON
+Daniel PERSON
+Matthew PERSON
+Mark PERSON
+Paul PERSON
+Andrew PERSON
+Joshua PERSON
+Kevin PERSON
+Brian PERSON
+George PERSON
+Edward PERSON
+Aaron PERSON
+Jacob PERSON
+Henry PERSON
+Samuel PERSON
+Christopher PERSON
+Jack PERSON
+Alexander PERSON
+Benjamin PERSON
+Nathan PERSON
+Luke PERSON
+Isaac PERSON
+Ethan PERSON
+Adam PERSON
+Mason PERSON
+Joseph PERSON
+Ryan PERSON
+Cameron PERSON
+Luke PERSON
+Oliver PERSON
+Richard PERSON
+Harry PERSON
+Dylan PERSON
+Oscar PERSON
+Theo PERSON
+Alfie PERSON
+Jackson PERSON
+Toby PERSON
+Charlie PERSON
+Freddie PERSON
+Riley PERSON
+Lewis PERSON
+Max PERSON
+Finley PERSON
+Aiden PERSON
+Liam PERSON
+Noah PERSON
+Zachary PERSON
+Theo PERSON
+Reuben PERSON
+Harrison PERSON
+Freddie PERSON
+Leo PERSON
+Daniel PERSON
+Jake PERSON
+Toby PERSON
+Elliot PERSON
+Callum PERSON
+Jamie PERSON
+Evan PERSON
+Kai PERSON
+Finley PERSON
+Lucas PERSON
+Sebastian PERSON
+Morgan PERSON
+Myles PERSON
+Harvey PERSON
+Joshua PERSON
+Ethan PERSON
+Oliver PERSON
+Finn PERSON
+David PERSON
+Elijah PERSON
+Matthew PERSON
+Hugo PERSON
+Samuel PERSON
+Theo PERSON
+Jaxon PERSON
+Maximus PERSON
+Gabriel PERSON
+Zane PERSON
+Luca PERSON
+Jude PERSON
+Milo PERSON
+Miles PERSON
+Teddy PERSON
+Jasper PERSON
+Frankie PERSON
+Toby PERSON
+George PERSON
+Arthur PERSON
+Milo PERSON
+Albert PERSON
+Sebastian PERSON
+Elliot PERSON
+Harvey PERSON
+Oliver PERSON
+Benjamin PERSON
+Toby PERSON
+Evan PERSON
+Jaxon PERSON
+Lucas PERSON
+Theo PERSON
+Harrison PERSON
+Noah PERSON
+Dylan PERSON
+Joshua PERSON
+John Smith PERSON
+James Anderson PERSON
+David Brown PERSON
+Michael Johnson PERSON
+William Clark PERSON
+Joseph Taylor PERSON
+Benjamin White PERSON
+Samuel Harris PERSON
+Daniel Walker PERSON
+Matthew King PERSON
+Oliver Scott PERSON
+Joshua Adams PERSON
+Henry Moore PERSON
+Alexander Lee PERSON
+Andrew Mitchell PERSON
+Thomas Carter PERSON
+Isaac Parker PERSON
+Nathan Hall PERSON
+Ethan Nelson PERSON
+Jacob Martin PERSON
+Samuel Wright PERSON
+Cameron Carter PERSON
+Ryan Campbell PERSON
+Lucas Harris PERSON
+James Turner PERSON
+Jack Cooper PERSON
+David Roberts PERSON
+Harry Scott PERSON
+Michael Lewis PERSON
+Elijah Stewart PERSON
+Oscar Jackson PERSON
+Finley Moore PERSON
+Toby Bennett PERSON
+Mason Price PERSON
+Aiden Davis PERSON
+Charlie Green PERSON
+Noah Richardson PERSON
+Liam Baker PERSON
+Leo Coleman PERSON
+Daniel Evans PERSON
+Maxwell Wood PERSON
+Freddie King PERSON
+Zachary Foster PERSON
+Theo Campbell PERSON
+
+# Name combination of first and middle name for Yoruba females.
+Olamide B-PERSON
+Adebisi B-PERSON
+Ayotunde B-PERSON
+Temidayo B-PERSON
+Adedayo B-PERSON
+Bolanle B-PERSON
+Titi B-PERSON
+Morounkeji B-PERSON
+Mobolaji B-PERSON
+Adebimpe B-PERSON
+Durojaiye B-PERSON
+Adeola B-PERSON
+Oluwadamilola B-PERSON
+Taiwo B-PERSON
+Kehinde B-PERSON
+Simisola B-PERSON
+Olufunke B-PERSON
+Yetunde B-PERSON
+Oluwaseun B-PERSON
+Oluwatobiloba B-PERSON
+Folake B-PERSON
+Abimbola B-PERSON
+Temiloluwa B-PERSON
+Oluwafunmilayo B-PERSON
+Adebukola B-PERSON
+Ayotomiwa B-PERSON
+Oluwatoyosi B-PERSON
+Oluwakemi B-PERSON
+Iretiola B-PERSON
+Oluwaseyi B-PERSON
+Idowu B-PERSON
+Oluwafeyikemi B-PERSON
+Oluwawemimo B-PERSON
+Olawunmi B-PERSON
+Oluwaseun Titi B-PERSON
+Ayotunde Adebisi B-PERSON
+Temiloluwa Adedayo B-PERSON
+Oluwatobiloba Olamide B-PERSON
+Bolanle Morounkeji B-PERSON
+Mobolaji Temidayo B-PERSON
+Olufunke Durojaiye B-PERSON
+Yetunde Adebimpe B-PERSON
+Oluwadamilola Folake B-PERSON
+Kehinde Adedayo B-PERSON
+Simisola Oluwadamilola B-PERSON
+Oluwatoyosi Ayotunde B-PERSON
+Taiwo Morounkeji B-PERSON
+Adebisi Abimbola B-PERSON
+Oluwawemimo Ayotunde B-PERSON
+Adeola Ayotomiwa B-PERSON
+Oluwatoyosi Yetunde B-PERSON
+Oluwafeyikemi Olamide B-PERSON
+Mobolaji Iretiola B-PERSON
+Adebimpe Simisola B-PERSON
+Taiwo Olufunke B-PERSON
+Kehinde Morounkeji B-PERSON
+Oluwatoyosi Oluwaseun B-PERSON
+Oluwaseyi Adebisi B-PERSON
+Simisola Adedayo B-PERSON
+Olufunke Olamide B-PERSON
+Oluwaseun Folake B-PERSON
+Oluwatobiloba Mobolaji B-PERSON
+Ayotunde Durojaiye B-PERSON
+Adedayo Morounkeji B-PERSON
+Taiwo Yetunde B-PERSON
+Kehinde Adeola B-PERSON
+Oluwawemimo Iretiola B-PERSON
+Adebukola Folake B-PERSON
+Oluwaseyi Temidayo B-PERSON
+Oluwatofunmi B-PERSON
+Temiloluwa Ayotunde B-PERSON
+Oluwadamilola Titi B-PERSON
+Oluwawemimo Oluwaseun B-PERSON
+Bolanle Olufunke B-PERSON
+Simisola Mobolaji B-PERSON
+Taiwo Adedayo B-PERSON
+Adeola Adebimpe B-PERSON
+Adebisi Durojaiye B-PERSON
+Temidayo Ayotunde B-PERSON
+Oluwaseyi Temiloluwa B-PERSON
+Oluwafeyikemi Adebisi B-PERSON
+Oluwatoyosi Adeola B-PERSON
+Adebimpe Olamide B-PERSON
+Kehinde Adebukola B-PERSON
+Mobolaji Olufunke B-PERSON
+Ayotunde Oluwawemimo B-PERSON
+Folake Simisola B-PERSON
+Oluwatoyosi Folake B-PERSON
+Oluwafeyikemi Oluwawemimo B-PERSON
+Oluwatobiloba Ayotunde B-PERSON
+Yetunde Olamide B-PERSON
+Oluwawemimo Durojaiye B-PERSON
+Adebimpe Oluwaseyi B-PERSON
+Simisola Ayotunde B-PERSON
+Oluwatoyosi Morounkeji B-PERSON
+Oluwadamilola Oluwaseun B-PERSON
+Oluwatobiloba Adeola B-PERSON
+Kehinde Olufunke B-PERSON
+Adebimpe Oluwatoyosi B-PERSON
+Oluwawemimo Oluwaseyi B-PERSON
+Adebisi Mobolaji B-PERSON
+Oluwawemimo Olufunke B-PERSON
+Oluwawemimo Temiloluwa B-PERSON
+
+# Yoruba Male Names for Training
+# The following is a list of common Yoruba male names in the "PERSON" format
+# The names are used for training purposes in Named Entity Recognition (NER) models
+Adedayo PERSON
+Adegbite PERSON
+Adekunle PERSON
+Adefolake PERSON
+Adeola PERSON
+Ademola PERSON
+Adebayo PERSON
+Adebisi PERSON
+Adebukunola PERSON
+Adeola PERSON
+Adebayo PERSON
+Adefolake PERSON
+Adewale PERSON
+Adewumi PERSON
+Ayodele PERSON
+Ayotunde PERSON
+Babatunde PERSON
+Bola PERSON
+Bamidele PERSON
+Bola PERSON
+Chuka PERSON
+Durojaiye PERSON
+Durotimi PERSON
+Durojaiye PERSON
+Emeka PERSON
+Fatai PERSON
+Gbemisola PERSON
+Gbenga PERSON
+Gbolahan PERSON
+Ifeoluwa PERSON
+Ikechukwu PERSON
+Jibola PERSON
+Jide PERSON
+Kehinde PERSON
+Kola PERSON
+Kosoko PERSON
+Lekan PERSON
+Micheal PERSON
+Mofoluwake PERSON
+Moyo PERSON
+Morounkeji PERSON
+Olamide PERSON
+Oluwafemi PERSON
+Oluwadamilola PERSON
+Oluwakayode PERSON
+Oluwaseun PERSON
+Oluwaseyi PERSON
+Oluwafunmilayo PERSON
+Olumide PERSON
+Oluwatomisin PERSON
+Olusegun PERSON
+Oluwole PERSON
+Olamide PERSON
+Olumide PERSON
+Oluwaseun PERSON
+Oluwafemi PERSON
+Oluwadamilola PERSON
+Olorunfemi PERSON
+Olumide PERSON
+Orunmila PERSON
+Segun PERSON
+Seyi PERSON
+Tunde PERSON
+Taiwo PERSON
+Tolu PERSON
+Tosin PERSON
+Toluwani PERSON
+Yemi PERSON
+Yusuf PERSON
+Temidayo PERSON
+Temiloluwa PERSON
+Tobi PERSON
+Toluwa PERSON
+Tunde PERSON
+Tolu PERSON
+Taiwo PERSON
+Adebayo PERSON
+Durojaiye PERSON
+Ademola PERSON
+Abiola PERSON
+Oluwatobiloba PERSON
+Omolara PERSON
+Olamiposi PERSON
+Oluwatimileyin PERSON
+Adefolake PERSON
+Oluwafunmilayo PERSON
+Oluwole PERSON
+Oluwadare PERSON
+Olabode PERSON
+Adebunmi PERSON
+
+# Igbo Female Names with B, I, O Format
+# This dataset contains Igbo female names marked with B, I, O tagging format for training NER (Named Entity Recognition) models.
+
+Adaeze B-PERSON
+Adaku B-PERSON
+Adamma B-PERSON
+Amara B-PERSON
+Chiamaka B-PERSON
+Chinyere B-PERSON
+Chinonso B-PERSON
+Chidera B-PERSON
+Chika B-PERSON
+Chizoba B-PERSON
+Chinwe B-PERSON
+Ifeoma B-PERSON
+Ifeyinwa B-PERSON
+Ijeoma B-PERSON
+Kamsiyochukwu B-PERSON
+Kosisochukwu B-PERSON
+Kelechi B-PERSON
+Nneka B-PERSON
+Nkiru B-PERSON
+Nwando B-PERSON
+Ngozi B-PERSON
+Onyinyechi B-PERSON
+Oluebube B-PERSON
+Ogechi B-PERSON
+Olamma B-PERSON
+Ugochukwu B-PERSON
+Ugochi B-PERSON
+Ukachi B-PERSON
+Uzoma B-PERSON
+Adaku B-PERSON
+Adaobi B-PERSON
+Adaora B-PERSON
+Chiamaka B-PERSON
+Chidimma B-PERSON
+Chizor B-PERSON
+Chizaram B-PERSON
+Amarachi B-PERSON
+Ezinne B-PERSON
+Nnena B-PERSON
+Nkechi B-PERSON
+Oge B-PERSON
+Ogochukwu B-PERSON
+Olachi B-PERSON
+Chikodi B-PERSON
+Nneoma B-PERSON
+Ijeoma B-PERSON
+Chidinma B-PERSON
+Chidera B-PERSON
+Chidiebere B-PERSON
+Onyinye B-PERSON
+Adim B-PERSON
+Olamma B-PERSON
+Chibuzor B-PERSON
+Ogochukwu B-PERSON
+Okwuchi B-PERSON
+Tochukwu B-PERSON
+Ihuoma B-PERSON
+Ezinne B-PERSON
+Nnennaya B-PERSON
+Chikezie B-PERSON
+Ngozi B-PERSON
+Chinwe B-PERSON
+Ukachi B-PERSON
+Chizoba B-PERSON
+Chinyere B-PERSON
+Chinonso B-PERSON
+Chioma B-PERSON
+Chuka B-PERSON
+Nkechi B-PERSON
+Chikere B-PERSON
+Nonye B-PERSON
+Obinna B-PERSON
+Uzoma B-PERSON
+Kamsi B-PERSON
+Olamma B-PERSON
+Onyekachi B-PERSON
+Amara B-PERSON
+Ugochi B-PERSON
+Ebube B-PERSON
+Ugochinyere B-PERSON
+Ifeanyi B-PERSON
+Chimezie B-PERSON
+Kamara B-PERSON
+Azuka B-PERSON
+Ifechi B-PERSON
+Nwanneka B-PERSON
+Nwachinemere B-PERSON
+Chinelo B-PERSON
+
+# Igbo Male Names in PERSON Format
+# This dataset contains Igbo male names tagged for Named Entity Recognition (NER) training, where the tag "PERSON" denotes the entity type.
+
+Chijioke PERSON
+Chukwudi PERSON
+Chinonso PERSON
+Chukwuemeka PERSON
+Chidiebere PERSON
+Chike PERSON
+Chinua PERSON
+Chukwu PERSON
+Ifeanyi PERSON
+Ifechukwu PERSON
+Emeka PERSON
+Chidera PERSON
+Obinna PERSON
+Nwachukwu PERSON
+Nnamdi PERSON
+Kamsiyochukwu PERSON
+Kosisochukwu PERSON
+Nneka PERSON
+Ugochukwu PERSON
+Ugo PERSON
+Ikenna PERSON
+Nduka PERSON
+Ekenedilichukwu PERSON
+Kelechi PERSON
+Olumide PERSON
+Ifechukwu PERSON
+Chibuzor PERSON
+Amos PERSON
+Chidimma PERSON
+Chigozie PERSON
+Chikere PERSON
+Obinna PERSON
+Okechukwu PERSON
+Chukwuma PERSON
+Onyeka PERSON
+Chimezie PERSON
+Akanchawa PERSON
+Chinonso PERSON
+Ifeanyi PERSON
+Ekenedilichukwu PERSON
+Uzochukwu PERSON
+Azubuike PERSON
+Ifechukwu PERSON
+Ekene PERSON
+Chijioke PERSON
+Chukwuma PERSON
+Obinna PERSON
+Odogwu PERSON
+Chukwuka PERSON
+Eze PERSON
+Chukwudi PERSON
+Chima PERSON
+Chidera PERSON
+Amara PERSON
+Ugochi PERSON
+Nnaemeka PERSON
+Onyema PERSON
+Chibueze PERSON
+Uchendu PERSON
+Ikemefuna PERSON
+Chijioke PERSON
+Ifeanyi PERSON
+Ugochukwu PERSON
+Kamsi PERSON
+Chinua PERSON
+Emmanuel PERSON
+Chijioke PERSON
+Chikezie PERSON
+Olumide PERSON
+Chinonso PERSON
+Kelechi PERSON
+Ifeanyi PERSON
+Eze PERSON
+Ifechi PERSON
+Chuka PERSON
+Ikenna PERSON
+Ugochukwu PERSON
+Chike PERSON
+Azuka PERSON
+Chidi PERSON
+Udo PERSON
+Chigozie PERSON
+Chibuike PERSON
+Onyeka PERSON
+Nnanna PERSON
+Ekene PERSON
+Obinna PERSON
+Nwachinemere PERSON
+Chikodi PERSON
+Amos PERSON
+Nwankwo PERSON
+Chijioke PERSON
+Chidera PERSON
+Chidiebere PERSON
+Chima PERSON
+Kelechi PERSON
+Chinonso PERSON
+Kosisochukwu PERSON
+Ifeanyi PERSON
+Ugochukwu PERSON
+
+# Hausa Female Names: Single and Combinations, tagged with B-PERSON and I-PERSON where applicable.
+
+Bilkisu B-PERSON
+Aisha B-PERSON
+Zainab B-PERSON
+Ruqayya B-PERSON
+Maryam B-PERSON
+Fatimah B-PERSON
+Hauwa B-PERSON
+Asma'u B-PERSON
+Jamila B-PERSON
+Hajara B-PERSON
+Sadiya B-PERSON
+Sa’adatu B-PERSON
+Khadijah B-PERSON
+Maimuna B-PERSON
+Rabi’u B-PERSON
+Hajara B-PERSON
+Ruqayyah B-PERSON
+Sukaina B-PERSON
+Ummu B-PERSON
+Hafsat B-PERSON
+Kaltum B-PERSON
+Zahra B-PERSON
+Aysha B-PERSON
+Sulema B-PERSON
+Bilqis B-PERSON
+Sadiya B-PERSON
+Tajudeen B-PERSON
+Amina B-PERSON
+Kawthar B-PERSON
+Mariya B-PERSON
+Ruqaiyyah B-PERSON
+Fatimatu B-PERSON
+Zainabu B-PERSON
+Basira B-PERSON
+Ummulkhair B-PERSON
+Aishatu B-PERSON
+Mumtaz B-PERSON
+Zahara B-PERSON
+Amina B-PERSON
+Hafizah B-PERSON
+Maryama B-PERSON
+Lami B-PERSON
+Binta B-PERSON
+Khadijat B-PERSON
+Zahara B-PERSON
+Rasheedah B-PERSON
+Safiyya B-PERSON
+Zainabu B-PERSON
+Nafisa B-PERSON
+Kausar B-PERSON
+Mariam B-PERSON
+Maimunah B-PERSON
+Asimah B-PERSON
+Sakina B-PERSON
+Ramatu B-PERSON
+Kehinde B-PERSON
+Fauzia B-PERSON
+Lina B-PERSON
+Shahida B-PERSON
+Aminat B-PERSON
+Sumayya B-PERSON
+Ummulkhair B-PERSON
+Nafisat B-PERSON
+Siddiqa B-PERSON
+Samira B-PERSON
+Amiya B-PERSON
+Rasheeda B-PERSON
+Ladi B-PERSON
+Ahlam B-PERSON
+Muneerah B-PERSON
+Zaynab B-PERSON
+Raihana B-PERSON
+Rumana B-PERSON
+Iffah B-PERSON
+Ruqayyah B-PERSON
+Nasiha B-PERSON
+Sumaiyah B-PERSON
+Latifa B-PERSON
+Sadiyyah B-PERSON
+Nafisah B-PERSON
+Masha’a B-PERSON
+Hafsah B-PERSON
+Samrah B-PERSON
+Siti B-PERSON
+Sultana B-PERSON
+Shirin B-PERSON
+Aylah B-PERSON
+Zahra’a B-PERSON
+Munya B-PERSON
+Yasmin B-PERSON
+Maimuna B-PERSON
+Rukayyah B-PERSON
+Fatimatu B-PERSON
+Na’imah B-PERSON
+Kaltume B-PERSON
+Khawlah B-PERSON
+Aaliyah B-PERSON
+Khadijat B-PERSON
+Sa’adat B-PERSON
+Sakina B-PERSON
+Zahrah B-PERSON
+Jamila B-PERSON
+Asiya B-PERSON
+Naima B-PERSON
+
+# Multi-word names (first name and last name) will use I-PERSON for continuation:
+Amina Zahra B-PERSON
+Fatimah Asma'u B-PERSON
+Khadija Rahma B-PERSON
+Maryam Hajara B-PERSON
+Ruqayyah Aliyu B-PERSON
+Jamila Sadiya B-PERSON
+Aisha Fatimah B-PERSON
+Sulema Hafsat B-PERSON
+Kaltum Jamila B-PERSON
+Zahra Hauwa B-PERSON
+Aysha Sadiya B-PERSON
+Aminah Mariam B-PERSON
+Fatimatu Maimuna B-PERSON
+Zainab Rasheedah B-PERSON
+Khadijat Zaynab B-PERSON
+Ruqayyah Bilkisu B-PERSON
+Mariam Kaltum B-PERSON
+Hajara Sadiyyah B-PERSON
+Zahara Hafizah B-PERSON
+Amina Binta B-PERSON
+Zahra Iffah B-PERSON
+Sadiya Zaynab B-PERSON
+Aishatu Maimuna B-PERSON
+Jamila Sumayya B-PERSON
+Lina Rahma B-PERSON
+Fauzia Samira B-PERSON
+Shahida Maryama B-PERSON
+Amiya Kausar B-PERSON
+Ahlam Khadijah B-PERSON
+Raihana Ahlam B-PERSON
+Ruqayyah Mariya B-PERSON
+Latifa Muneerah B-PERSON
+Masha'a Zainab B-PERSON
+Samrah Amina B-PERSON
+Nafisat Safiyya B-PERSON
+Kehinde Kaltum B-PERSON
+Ladi Sultana B-PERSON
+Zahrah Fatimah B-PERSON
+Ruqayyah Zainabu B-PERSON
+
+# Hausa Male Names: Single and Combinations tagged with PERSON for NER training
+
+Aminu PERSON
+Ibrahim PERSON
+Usman PERSON
+Muhammad PERSON
+Abdullahi PERSON
+Aliyu PERSON
+Hassan PERSON
+Abubakar PERSON
+Sani PERSON
+Mustapha PERSON
+Salihu PERSON
+Kamilu PERSON
+Suleiman PERSON
+Rashid PERSON
+Abdulkareem PERSON
+Bashir PERSON
+Yusuf PERSON
+Ismail PERSON
+Jamilu PERSON
+Nashiru PERSON
+Bello PERSON
+Farouk PERSON
+Mohammed PERSON
+Haruna PERSON
+Zubairu PERSON
+Yakubu PERSON
+Faisal PERSON
+Rufa'i PERSON
+Abubakar Aliyu PERSON
+Suleiman Ahmad PERSON
+Abdulrahman PERSON
+Shehu PERSON
+Mu'azu PERSON
+Sulaiman PERSON
+Musa PERSON
+Danjuma PERSON
+Murtala PERSON
+Sani Aliyu PERSON
+Ali Ibrahim PERSON
+Umar PERSON
+Shamsudeen PERSON
+Hassan Abubakar PERSON
+Omar PERSON
+Musa Ismail PERSON
+Ibrahim Bello PERSON
+Yahaya PERSON
+Nashiru Abubakar PERSON
+Kasimu PERSON
+Sa'id PERSON
+Amir PERSON
+Aminu Ibrahim PERSON
+Yusuf Muhammad PERSON
+Hassan Umar PERSON
+Idris PERSON
+Aminu Sulaimon PERSON
+Ibrahim Usman PERSON
+Yusuf Sani PERSON
+Nura PERSON
+Hassan Aliyu PERSON
+Mohammed Umar PERSON
+Haruna Sulaiman PERSON
+Bashir Musa PERSON
+Usman Abubakar PERSON
+Sadiq PERSON
+Aliyu Ahmed PERSON
+Rashid Aliyu PERSON
+Zakariyyah PERSON
+Musa Muhammad PERSON
+Abdulkadir PERSON
+Mustapha Ismail PERSON
+Bello Abubakar PERSON
+Ahmed PERSON
+Murtala Yusuf PERSON
+Sa'ad PERSON
+Aliyu Abubakar PERSON
+Mu'azu Aliyu PERSON
+Mohammad Sulaiman PERSON
+Mahmoud PERSON
+Bashir Usman PERSON
+Yakubu Ibrahim PERSON
+Nasir PERSON
+Tahir PERSON
+Muhammad Aliyu PERSON
+Abdulaziz PERSON
+Abdu PERSON
+Ahmad PERSON
+Nashiru Ibrahim PERSON
+Abdulmalik PERSON
+Shehu Ismail PERSON
+Faisal Abubakar PERSON
+Tijjani PERSON
+Omar Aliyu PERSON
+Mohammed Sani PERSON
+Sulaimon Abdullahi PERSON
+Abdullahi Yusuf PERSON
+Mustapha Hassan PERSON
+Yusuf Ali PERSON
+Aminu Aliyu PERSON
+Abdullahi Muhammad PERSON
+Sani Ismail PERSON
+Khalid PERSON
+Othman PERSON
+Aminu Haruna PERSON
+Usman Ibrahim PERSON
+Jibril PERSON
+Abdulmalik Yusuf PERSON
+Aliyu Yahaya PERSON
+Tariq PERSON
+Ibrahim Muhammad PERSON
+Umar Aliyu PERSON
+Nashiru Ibrahim PERSON
+Fauziyyah PERSON
+Rabi'u PERSON
+
+# Multi-word names (combinations of first name and last name) tagged accordingly:
+Usman Aliyu PERSON
+Ibrahim Sani PERSON
+Aminu Abdullahi PERSON
+Muhammad Yusuf PERSON
+Bashir Usman PERSON
+Ahmed Haruna PERSON
+Ibrahim Muhammad PERSON
+Abubakar Sulaiman PERSON
+Aliyu Yusuf PERSON
+Mustapha Aliyu PERSON
+Rashid Aliyu PERSON
+Zakariyyah Usman PERSON
+Haruna Abdullahi PERSON
+Faisal Abdullahi PERSON
+Musa Ismail PERSON
+Yusuf Sani PERSON
+Usman Ahmed PERSON
+Hassan Abdullahi PERSON
+Ali Ibrahim PERSON
+Abdullahi Haruna PERSON
+Suleiman Yusuf PERSON
+Bashir Ibrahim PERSON
+Jamilu Usman PERSON
+Idris Abubakar PERSON
+Sani Aliyu PERSON
+Abdu Abubakar PERSON
+Fauziyyah Aliyu PERSON
+Zubairu Sulaiman PERSON
+Muhammad Abubakar PERSON
+Abdulrahman Aliyu PERSON
+Murtala Aliyu PERSON
+Tariq Sulaiman PERSON
+Yakubu Sulaiman PERSON
+Murtala Abubakar PERSON
+Hassan Aliyu PERSON
+Ibrahim Sani PERSON
+Musa Abubakar PERSON
+Suleiman Muhammad PERSON
+Usman Ibrahim PERSON
+Jibril Ibrahim PERSON
+Yusuf Aliyu PERSON
+Bello Ibrahim PERSON
+Ali Ismail PERSON
+Aminu Ahmed PERSON
+Hassan Haruna PERSON
+Aminu Ali PERSON
+Muhammad Abdullahi PERSON
+Abdulrahman Ahmad PERSON
+Musa Ahmed PERSON
+Tijjani Abdullahi PERSON
+Murtala Aliyu PERSON
+Shehu Muhammad PERSON
+Ahmed Aliyu PERSON
+Haruna Aliyu PERSON
+Yusuf Haruna PERSON
+Bashir Haruna PERSON
+Yakubu Usman PERSON
+
+# Common Nigerian Female Names: Single and Combinations tagged with PERSON for NER training
+# Includes names from Yoruba, Igbo, Hausa, Plateau, Benue, and other Nigerian states
+
+Adaeze PERSON
+Chiamaka PERSON
+Ngozi PERSON
+Olufunke PERSON
+Fatimah PERSON
+Olamide PERSON
+Ngozi Chiamaka PERSON
+Ifunanya PERSON
+Adebisi PERSON
+Amara PERSON
+Abosede PERSON
+Chinyere PERSON
+Anuli PERSON
+Oluwaseun PERSON
+Titilayo PERSON
+Aminat PERSON
+Kudirat PERSON
+Zainab PERSON
+Kemi PERSON
+Iyabo PERSON
+Nnena PERSON
+Ajoke PERSON
+Chinonso PERSON
+Adebayo PERSON
+Ifeoma PERSON
+Opeyemi PERSON
+Tolu PERSON
+Ugochukwu PERSON
+Adesola PERSON
+Temidayo PERSON
+Olamiposi PERSON
+Ololade PERSON
+Chika PERSON
+Eunice PERSON
+Efe PERSON
+Bilikisu PERSON
+Edozie PERSON
+Doreen PERSON
+Enenche PERSON
+Salamatu PERSON
+Rejoice PERSON
+Hauwa PERSON
+Mercy PERSON
+Gloria PERSON
+Chukwuka PERSON
+Chinonso Nkechi PERSON
+Okafor PERSON
+Matilda PERSON
+Folake PERSON
+Juliana PERSON
+Perpetua PERSON
+Ireti PERSON
+Modesta PERSON
+Katherine PERSON
+Chiamaka Adaeze PERSON
+Chinonso Ifunanya PERSON
+Nkiruka PERSON
+Olamide Adebisi PERSON
+Esther PERSON
+Uchechi PERSON
+Grace PERSON
+Blessing PERSON
+Samantha PERSON
+Judith PERSON
+Vivian PERSON
+Toluwa PERSON
+Sarah PERSON
+Chinyere Ifeoma PERSON
+Philomena PERSON
+Chuka PERSON
+Lydia PERSON
+Oluwafunmilayo PERSON
+Nancy PERSON
+Blessing Ifeoma PERSON
+Helen PERSON
+Florence PERSON
+Precious PERSON
+Oluwaseun Zainab PERSON
+Faith PERSON
+Aishat PERSON
+Esther Olamide PERSON
+Temiloluwa PERSON
+Onyinyechi PERSON
+Ngozi Adebayo PERSON
+Chidinma PERSON
+Miriam PERSON
+Chukwuemeka PERSON
+Amaka PERSON
+Theresa PERSON
+Elena PERSON
+Desire PERSON
+Chidinma Ngozi PERSON
+Hannah PERSON
+Patience PERSON
+Joyce PERSON
+Solomon PERSON
+Matilda Olamide PERSON
+Olusola PERSON
+Alhaja PERSON
+Damaris PERSON
+Mojisola PERSON
+Ruth PERSON
+Rebecca PERSON
+Amina PERSON
+Peace PERSON
+Afiniki PERSON
+Nanret PERSON
+Peret PERSON
+Alice PERSON
+Kyenret PERSON
+Nansat PERSON
+
+# Common Nigerian Male Names from various Nigerian States
+# Tagged with "PERSON", "B-PERSON", "I-PERSON", "O-PERSON" for NER model training
+
+Chukwudi PERSON
+Adamu PERSON
+Abdulrahman PERSON
+John PERSON
+Adebayo PERSON
+Godwin Ngusen Jethro PERSON
+Arbat Michael PERSON
+Michael Arbat PERSON
+Jakak Gabriel PERSON
+Gabriel Jakak PERSON
+Walshak Dingsan PERSON
+Walshak PERSON
+Nandom PERSON
+Plangnan PERSON
+Emeka PERSON
+Victor PERSON
+Chijioke PERSON
+Babatunde PERSON
+Ibrahim PERSON
+Oluwaseun PERSON
+Olumide PERSON
+Uche PERSON
+Chinedu PERSON
+Ahmed PERSON
+Enoch PERSON
+Samuel PERSON
+Chima PERSON
+Nnamdi PERSON
+Oluwatobi PERSON
+Chukwuka PERSON
+Micheal PERSON
+Gabriel PERSON
+Kehinde PERSON
+Taiwo PERSON
+Adewale PERSON
+Isaac PERSON
+Daniel PERSON
+Ugochukwu PERSON
+Peter PERSON
+David PERSON
+Ayodele PERSON
+Durojaiye PERSON
+Damola PERSON
+Tunde PERSON
+Abubakar PERSON
+Zainab PERSON
+Felix PERSON
+Ezekiel PERSON
+Emmanuel PERSON
+Suleiman PERSON
+Benjamin PERSON
+Chuka PERSON
+Ifeanyi PERSON
+Ogunleye PERSON
+Adebisi PERSON
+Oluwafemi PERSON
+Akinlolu PERSON
+Joshua PERSON
+Solomon PERSON
+Chukwuemeka PERSON
+Yusuf PERSON
+Tariq PERSON
+Sule PERSON
+Chijioke Ugochukwu PERSON
+Francis PERSON
+Collins PERSON
+Tobi PERSON
+Joshua Olamide PERSON
+Temidayo PERSON
+Okechukwu PERSON
+Adeola PERSON
+Tope PERSON
+Ifeoma PERSON
+Olawale PERSON
+Anselm PERSON
+Tariq Abubakar PERSON
+Jide PERSON
+Tunde Ifeanyi PERSON
+Fola PERSON
+Hassan PERSON
+James PERSON
+Isa PERSON
+Aminu PERSON
+Seun PERSON
+Nuhu PERSON
+Adewumi PERSON
+Tosin PERSON
+Ayotunde PERSON
+David Emmanuel PERSON
+Bassey PERSON
+Chukwuma PERSON
+Nwachukwu PERSON
+Benjamin Eze PERSON
+Azubuike PERSON
+Sani PERSON
+Peter Chijioke PERSON
+Abdullahi PERSON
+Kayode PERSON
+Femi PERSON
+Olanrewaju PERSON
+Lanre PERSON
+David Chijioke PERSON
+Abu PERSON
+Oluwatosin PERSON
+Micheal Joshua PERSON
+Adedayo PERSON
+Chidiebere PERSON
+Ayoola PERSON
+Nnamdi Ifeanyi PERSON
+Amos PERSON
+Kennedy PERSON
+Micheal Benjamin PERSON
+Khalid PERSON
+Harrison PERSON
+Anya PERSON
+Johnson PERSON
+Ismail PERSON
+Benedict PERSON
+Godwin PERSON
+Simeon PERSON
+Samuel Joseph PERSON
+Daniel Olamide PERSON
+Ugo PERSON
+Solomon Ifeanyi PERSON
+Ebere PERSON
+Chidiebere Ugochukwu PERSON
+
+# Common World Female Names from Real-World Research
+# Tagged with "PERSON", "B-PERSON", "I-PERSON", "O-PERSON" for NER model training
+
+Emma PERSON
+Olivia PERSON
+Ava PERSON
+Isabella PERSON
+Sophia PERSON
+Mia PERSON
+Amelia PERSON
+Harper PERSON
+Evelyn PERSON
+Abigail PERSON
+Ella PERSON
+Scarlett PERSON
+Grace PERSON
+Lily PERSON
+Aria PERSON
+Chloe PERSON
+Isla PERSON
+Charlotte PERSON
+Layla PERSON
+Zoe PERSON
+Nora PERSON
+Riley PERSON
+Lillian PERSON
+Addison PERSON
+Audrey PERSON
+Lucy PERSON
+Paisley PERSON
+Savannah PERSON
+Brooklyn PERSON
+Bella PERSON
+Nova PERSON
+Hazel PERSON
+Everly PERSON
+Leah PERSON
+Ellie PERSON
+Avery PERSON
+Sofia PERSON
+Camila PERSON
+Ariana PERSON
+Mila PERSON
+Ivy PERSON
+Aubrey PERSON
+Hannah PERSON
+Luna PERSON
+Addison Grace PERSON
+Sarah PERSON
+Sadie PERSON
+Caroline PERSON
+Penelope PERSON
+Anna PERSON
+Leilani PERSON
+Scarlett Grace PERSON
+Victoria PERSON
+Madeline PERSON
+Katherine PERSON
+Maria PERSON
+Elizabeth PERSON
+Claire PERSON
+Alice PERSON
+Cora PERSON
+Ruby PERSON
+Eva PERSON
+Madison PERSON
+Emilia PERSON
+Delilah PERSON
+Victoria Sophia PERSON
+Cecilia PERSON
+Avery Rose PERSON
+Maya PERSON
+Sophia Grace PERSON
+Daisy PERSON
+Hailey PERSON
+Samantha PERSON
+Vivian PERSON
+Stella PERSON
+Gianna PERSON
+Delilah Rose PERSON
+Lydia PERSON
+Harper Grace PERSON
+Riley Mae PERSON
+Violet PERSON
+Eleanor PERSON
+Mackenzie PERSON
+Alexa PERSON
+Zara PERSON
+Autumn PERSON
+Sophie PERSON
+Amaya PERSON
+Nina PERSON
+Megan PERSON
+Brooklyn Grace PERSON
+Isabel PERSON
+Sydney PERSON
+Catherine PERSON
+Eliza PERSON
+Josephine PERSON
+Ariana Grace PERSON
+Lola PERSON
+Kaitlyn PERSON
+Sabrina PERSON
+Reagan PERSON
+Lindsey PERSON
+Alicia PERSON
+Jasmine PERSON
+Tessa PERSON
+Bailey PERSON
+Rory PERSON
+Marley PERSON
+Emily PERSON
+Rebecca PERSON
+Anna Mae PERSON
+Kendra PERSON
+Holly PERSON
+Kylie PERSON
+Eleanor Rose PERSON
+Maddie PERSON
+Kendall PERSON
+Fiona PERSON
+Isabelle PERSON
+Rosalie PERSON
+Kaitlyn Mae PERSON
+Carmen PERSON
+Lacey PERSON
+Taylor PERSON
+Alana PERSON
+Brooke PERSON
+Nora Rose PERSON
+Piper PERSON
+Chloe Grace PERSON
+
+# Russian Female Names
+Anastasia PERSON
+Irina PERSON
+Maria PERSON
+Ekaterina PERSON
+Olga PERSON
+Natalia PERSON
+Darya PERSON
+Yulia PERSON
+Tatiana PERSON
+Elena PERSON
+Svetlana PERSON
+Valentina PERSON
+Vera PERSON
+Galina PERSON
+Polina PERSON
+
+# Chinese Female Names
+Li PERSON
+Xia PERSON
+Lian PERSON
+Mei PERSON
+Ying PERSON
+Hua PERSON
+Lan PERSON
+Zhao PERSON
+Qing PERSON
+Fang PERSON
+Jing PERSON
+Xiu PERSON
+Wei PERSON
+Yue PERSON
+Ling PERSON
+
+# Japanese Female Names
+Yuki PERSON
+Hana PERSON
+Aiko PERSON
+Emiko PERSON
+Yumi PERSON
+Sakura PERSON
+Natsuki PERSON
+Sachi PERSON
+Keiko PERSON
+Naomi PERSON
+Miyuki PERSON
+Haruka PERSON
+Rika PERSON
+Mai PERSON
+Riko PERSON
+
+# South American Female Names
+Isabella PERSON
+Valentina PERSON
+Sofia PERSON
+Camila PERSON
+Catalina PERSON
+Mariana PERSON
+Gabriela PERSON
+Juliana PERSON
+Ana PERSON
+Lucia PERSON
+Florencia PERSON
+Carolina PERSON
+Andrea PERSON
+Luciana PERSON
+Renata PERSON
+
+# Middle Eastern Female Names
+Layla PERSON
+Fatima PERSON
+Zaynab PERSON
+Amina PERSON
+Rania PERSON
+Maya PERSON
+Samira PERSON
+Lina PERSON
+Jasmine PERSON
+Dina PERSON
+Sanaa PERSON
+Yasmin PERSON
+Noura PERSON
+Sara PERSON
+Mona PERSON
+
+# African Female Names
+Aminata PERSON
+Zainab PERSON
+Ngozi PERSON
+Fatou PERSON
+Amina PERSON
+Chidinma PERSON
+Ifeoma PERSON
+Abiola PERSON
+Titi PERSON
+Mirembe PERSON
+Zahra PERSON
+Ebele PERSON
+Makena PERSON
+Akosua PERSON
+Nia PERSON
+
+# Indian Female Names
+Priya PERSON
+Anjali PERSON
+Aishwarya PERSON
+Sanya PERSON
+Shruti PERSON
+Pooja PERSON
+Neha PERSON
+Riya PERSON
+Sita PERSON
+Kavya PERSON
+Tanvi PERSON
+Meera PERSON
+Nisha PERSON
+Radha PERSON
+Divya PERSON
+
+# European Female Names
+Amélie PERSON
+Sophie PERSON
+Clara PERSON
+Emma PERSON
+Lena PERSON
+Marie PERSON
+Ana PERSON
+Maya PERSON
+Sara PERSON
+Giulia PERSON
+Eva PERSON
+Alice PERSON
+Elisa PERSON
+Paula PERSON
+Victoria PERSON
+
+# Australian Female Names
+Charlotte PERSON
+Abigail PERSON
+Sophie PERSON
+Emily PERSON
+Ella PERSON
+Amelia PERSON
+Olivia PERSON
+Mia PERSON
+Grace PERSON
+Chloe PERSON
+Sienna PERSON
+Isla PERSON
+Ruby PERSON
+Zoe PERSON
+Lucy PERSON
+
+# Common World Male Names from Real-World Research
+# Tagged with "PERSON", "B-PERSON", "I-PERSON", "O-PERSON" for NER model training
+
+Liam PERSON
+Noah PERSON
+Oliver PERSON
+Elijah PERSON
+James PERSON
+William PERSON
+Benjamin PERSON
+Lucas PERSON
+Henry PERSON
+Alexander PERSON
+Mason PERSON
+Michael PERSON
+Sebastian PERSON
+Jack PERSON
+Samuel PERSON
+David PERSON
+Joseph PERSON
+Charles PERSON
+Thomas PERSON
+Matthew PERSON
+Andrew PERSON
+Isaac PERSON
+Ethan PERSON
+Daniel PERSON
+Caleb PERSON
+Luke PERSON
+Ryan PERSON
+Nathan PERSON
+Joshua PERSON
+Christopher PERSON
+Gabriel PERSON
+Jackson PERSON
+Aiden PERSON
+Dylan PERSON
+Leo PERSON
+Grayson PERSON
+Carter PERSON
+Wyatt PERSON
+Jayden PERSON
+John PERSON
+Owen PERSON
+Jack B-PERSON
+Daniel I-PERSON
+Finn PERSON
+Isaiah PERSON
+Eli PERSON
+Aaron PERSON
+Adam PERSON
+Robert PERSON
+Zachary PERSON
+Samuel I-PERSON
+Asher PERSON
+Hunter PERSON
+Christian PERSON
+Evan PERSON
+Isaiah I-PERSON
+Maverick PERSON
+Thomas I-PERSON
+Miles PERSON
+David I-PERSON
+Lincoln PERSON
+Jameson PERSON
+Adam I-PERSON
+Hudson PERSON
+Gavin PERSON
+Leo I-PERSON
+Jaxon PERSON
+Jasper PERSON
+Silas PERSON
+Mason I-PERSON
+Cole PERSON
+Jesse PERSON
+Xander PERSON
+Brody PERSON
+Kaden PERSON
+Connor PERSON
+Nolan PERSON
+Theo PERSON
+Austin PERSON
+Jace PERSON
+Maxwell PERSON
+Camden PERSON
+Ellis PERSON
+Santiago PERSON
+Luca PERSON
+Bentley PERSON
+Griffin PERSON
+Oscar PERSON
+Nash PERSON
+Zane PERSON
+Max PERSON
+Calvin PERSON
+Leonardo PERSON
+Gage PERSON
+Emmett PERSON
+Beau PERSON
+Lennox PERSON
+Emiliano PERSON
+Tyler PERSON
+Arthur PERSON
+Freddie PERSON
+Jett PERSON
+Victor PERSON
+Riley PERSON
+Reed PERSON
+August PERSON
+Ashton PERSON
+Finn I-PERSON
+Roman PERSON
+Leo O-PERSON
+Dante PERSON
+Xander I-PERSON
+Harrison PERSON
+Javier PERSON
+Maximus PERSON
+
+# Russian Male Names
+Alexander PERSON
+Dmitry PERSON
+Maxim PERSON
+Ivan PERSON
+Sergey PERSON
+Alexei PERSON
+Mikhail PERSON
+Nikolai PERSON
+Vladimir PERSON
+Andrei PERSON
+Yuri PERSON
+Vasily PERSON
+Leonid PERSON
+Artem PERSON
+Egor PERSON
+
+# Chinese Male Names
+Wei PERSON
+Li PERSON
+Jian PERSON
+Xiang PERSON
+Zhang PERSON
+Yu PERSON
+Hao PERSON
+Tian PERSON
+Jun PERSON
+Ming PERSON
+Bo PERSON
+Chao PERSON
+Lei PERSON
+Feng PERSON
+Kai PERSON
+
+# Japanese Male Names
+Hiroshi PERSON
+Kaito PERSON
+Satoshi PERSON
+Ren PERSON
+Yuto PERSON
+Taro PERSON
+Ryu PERSON
+Shinji PERSON
+Daiki PERSON
+Haruto PERSON
+Yuki PERSON
+Kei PERSON
+Takumi PERSON
+Ryota PERSON
+Yuji PERSON
+
+# South American Male Names
+Mateo PERSON
+Juan PERSON
+Sebastian PERSON
+Diego PERSON
+Lucas PERSON
+Carlos PERSON
+Gabriel PERSON
+Luis PERSON
+Andres PERSON
+Fernando PERSON
+Miguel PERSON
+Pedro PERSON
+Alejandro PERSON
+David PERSON
+Francisco PERSON
+
+# Middle Eastern Male Names
+Omar PERSON
+Ali PERSON
+Ibrahim PERSON
+Yusuf PERSON
+Hassan PERSON
+Khalid PERSON
+Ahmed PERSON
+Tariq PERSON
+Zayd PERSON
+Rami PERSON
+Hadi PERSON
+Rashid PERSON
+Samir PERSON
+Faisal PERSON
+Adnan PERSON
+
+# African Male Names
+Kwame PERSON
+Chijioke PERSON
+Tariq PERSON
+Emeka PERSON
+Ahmed PERSON
+Zubair PERSON
+Kofi PERSON
+Chuka PERSON
+Sefu PERSON
+Bayo PERSON
+Mandla PERSON
+Nnamdi PERSON
+Kamau PERSON
+Ifeanyi PERSON
+Tariq PERSON
+
+# Indian Male Names
+Aarav PERSON
+Rohan PERSON
+Arjun PERSON
+Vishal PERSON
+Aditya PERSON
+Krishna PERSON
+Karan PERSON
+Sidharth PERSON
+Nikhil PERSON
+Raj PERSON
+Amit PERSON
+Varun PERSON
+Vivek PERSON
+Raghav PERSON
+Abhinav PERSON
+
+# European Male Names
+Luca PERSON
+Giovanni PERSON
+Marek PERSON
+Matteo PERSON
+Fabio PERSON
+Leonardo PERSON
+Luca PERSON
+Nico PERSON
+Henrik PERSON
+Niklas PERSON
+Jakob PERSON
+Emil PERSON
+Jakub PERSON
+Karl PERSON
+Simon PERSON
+
+# Australian Male Names
+Oliver PERSON
+Jack PERSON
+James PERSON
+Ethan PERSON
+Lucas PERSON
+William PERSON
+Mason PERSON
+Alexander PERSON
+Benjamin PERSON
+Henry PERSON
+Noah PERSON
+Leo PERSON
+Charlie PERSON
+Isaac PERSON
+Samuel PERSON
+
+# This dataset contains a variety of common first names, full names, middle names, and surnames from various ethnic groups, including Nigerian names and popular global names. These names are tagged with the "PERSON" label for entity recognition in NLP applications.
+# The names in this file represent individual persons and may include combinations of first, middle, and last names. Each name follows a consistent format, with a focus on name entities in natural language processing tasks.
+
+
+name: John PERSON
+fullname: John Michael Smith PERSON
+middle name: Michael PERSON
+surname: Smith PERSON
+name: Jane PERSON
+fullname: Jane Mary Doe PERSON
+middle name: Mary PERSON
+surname: Doe PERSON
+name: Godwin PERSON
+fullname: Godwin Ngusen Jethro PERSON
+middle name: Ngusen PERSON
+surname: Jethro PERSON
+name: Arbat PERSON
+fullname: Arbat Michael PERSON
+middle name: Michael PERSON
+surname: Arbat PERSON
+name: Gabriel PERSON
+fullname: Gabriel Jakak PERSON
+middle name: Jakak PERSON
+surname: Gabriel PERSON
+name: Walshak PERSON
+fullname: Walshak Dingsan PERSON
+middle name: Dingsan PERSON
+surname: Walshak PERSON
+name: Alice PERSON
+fullname: Alice John PERSON
+middle name: John PERSON
+surname: Alice PERSON
+name: Peret PERSON
+fullname: Peret Chinedu PERSON
+middle name: Chinedu PERSON
+surname: Peret PERSON
+name: Nanret PERSON
+fullname: Nanret Peter PERSON
+middle name: Peter PERSON
+surname: Nanret PERSON
+name: Desire PERSON
+fullname: Desire Kyenret PERSON
+middle name: Kyenret PERSON
+surname: Desire PERSON
+name: Peace PERSON
+fullname: Peace Afia PERSON
+middle name: Afia PERSON
+surname: Peace PERSON
+name: Afiniki PERSON
+fullname: Afiniki Grace PERSON
+middle name: Grace PERSON
+surname: Afiniki PERSON
+name: Nanret PERSON
+fullname: Nanret Kyenret PERSON
+middle name: Kyenret PERSON
+surname: Nanret PERSON
+name: Nansat PERSON
+fullname: Nansat Jekwu PERSON
+middle name: Jekwu PERSON
+surname: Nansat PERSON
+name: John Michael PERSON
+fullname: John Michael Smith PERSON
+middle name: Michael PERSON
+surname: Smith PERSON
+name: Olumide PERSON
+fullname: Olumide Adebayo PERSON
+middle name: Adebayo PERSON
+surname: Olumide PERSON
+name: Ngozi PERSON
+fullname: Ngozi Amaka PERSON
+middle name: Amaka PERSON
+surname: Ngozi PERSON
+name: Samuel PERSON
+fullname: Samuel Uche PERSON
+middle name: Uche PERSON
+surname: Samuel PERSON
+name: Chidera PERSON
+fullname: Chidera Ifeoma PERSON
+middle name: Ifeoma PERSON
+surname: Chidera PERSON
+name: Aminat PERSON
+fullname: Aminat Adamu PERSON
+middle name: Adamu PERSON
+surname: Aminat PERSON
+name: Chinonso PERSON
+fullname: Chinonso Emmanuel PERSON
+middle name: Emmanuel PERSON
+surname: Chinonso PERSON
+name: David PERSON
+fullname: David Daniel PERSON
+middle name: Daniel PERSON
+surname: David PERSON
+name: Joy PERSON
+fullname: Joy Efe PERSON
+middle name: Efe PERSON
+surname: Joy PERSON
+name: Moses PERSON
+fullname: Moses Daniel PERSON
+middle name: Daniel PERSON
+surname: Moses PERSON
+name: Esther PERSON
+fullname: Esther Ngozi PERSON
+middle name: Ngozi PERSON
+surname: Esther PERSON
+name: Tochukwu PERSON
+fullname: Tochukwu Samuel PERSON
+middle name: Samuel PERSON
+surname: Tochukwu PERSON
+name: Linda PERSON
+fullname: Linda Jane PERSON
+middle name: Jane PERSON
+surname: Linda PERSON
+name: Alex PERSON
+fullname: Alex Chike PERSON
+middle name: Chike PERSON
+surname: Alex PERSON
+name: Daniel PERSON
+fullname: Daniel Obi PERSON
+middle name: Obi PERSON
+surname: Daniel PERSON
+name: Precious PERSON
+fullname: Precious Adanna PERSON
+middle name: Adanna PERSON
+surname: Precious PERSON
+name: Taiwo PERSON
+fullname: Taiwo Adeyemi PERSON
+middle name: Adeyemi PERSON
+surname: Taiwo PERSON
+name: Bilkisu PERSON
+fullname: Bilkisu Aisha PERSON
+middle name: Aisha PERSON
+surname: Bilkisu PERSON
+name: Benjamin PERSON
+fullname: Benjamin Kalu PERSON
+middle name: Kalu PERSON
+surname: Benjamin PERSON
+name: Deborah PERSON
+fullname: Deborah Ifeoma PERSON
+middle name: Ifeoma PERSON
+surname: Deborah PERSON
+name: Rufus PERSON
+fullname: Rufus Chuka PERSON
+middle name: Chuka PERSON
+surname: Rufus PERSON
+name: Kelechi PERSON
+fullname: Kelechi Ifeanyi PERSON
+middle name: Ifeanyi PERSON
+surname: Kelechi PERSON
+name: Sandra PERSON
+fullname: Sandra Ada PERSON
+middle name: Ada PERSON
+surname: Sandra PERSON
+name: Emmanuel PERSON
+fullname: Emmanuel Okafor PERSON
+middle name: Okafor PERSON
+surname: Emmanuel PERSON
+name: Patrick PERSON
+fullname: Patrick Ikenna PERSON
+middle name: Ikenna PERSON
+surname: Patrick PERSON
+name: Faith PERSON
+fullname: Faith Oluwadamilola PERSON
+middle name: Oluwadamilola PERSON
+surname: Faith PERSON
+name: Tony PERSON
+fullname: Tony Jude PERSON
+middle name: Jude PERSON
+surname: Tony PERSON
+name: Olamide PERSON
+fullname: Olamide Adefolake PERSON
+middle name: Adefolake PERSON
+surname: Olamide PERSON
+name: Esther PERSON
+fullname: Esther Ugochinyere PERSON
+middle name: Ugochinyere PERSON
+surname: Esther PERSON
+name: Bamidele PERSON
+fullname: Bamidele Funmilayo PERSON
+middle name: Funmilayo PERSON
+surname: Bamidele PERSON
+name: Chika PERSON
+fullname: Chika Ebenezer PERSON
+middle name: Ebenezer PERSON
+surname: Chika PERSON
+name: Okechukwu PERSON
+fullname: Okechukwu David PERSON
+middle name: David PERSON
+surname: Okechukwu PERSON
+name: Ngozi PERSON
+fullname: Ngozi Okoro PERSON
+middle name: Okoro PERSON
+surname: Ngozi PERSON
+name: Kelechi PERSON
+fullname: Kelechi Okechukwu PERSON
+middle name: Okechukwu PERSON
+surname: Kelechi PERSON
+name: Akintoye PERSON
+fullname: Akintoye Ayodeji PERSON
+middle name: Ayodeji PERSON
+surname: Akintoye PERSON
+name: Esther PERSON
+fullname: Esther Onyinye PERSON
+middle name: Onyinye PERSON
+surname: Esther PERSON
+name: Nnena PERSON
+fullname: Nnena Chinonso PERSON
+middle name: Chinonso PERSON
+surname: Nnena PERSON
+name: Chinonso PERSON
+fullname: Chinonso Chizor PERSON
+middle name: Chizor PERSON
+surname: Chinonso PERSON
+name: Chibuzor PERSON
+fullname: Chibuzor Ifeanyi PERSON
+middle name: Ifeanyi PERSON
+surname: Chibuzor PERSON
+name: Adaeze PERSON
+fullname: Adaeze Nnena PERSON
+middle name: Nnena PERSON
+surname: Adaeze PERSON
+name: Joy PERSON
+fullname: Joy Ayotunde PERSON
+middle name: Ayotunde PERSON
+surname: Joy PERSON
+name: Anita PERSON
+fullname: Anita Patience PERSON
+middle name: Patience PERSON
+surname: Anita PERSON
+name: Chinonso PERSON
+fullname: Chinonso Madu PERSON
+middle name: Madu PERSON
+surname: Chinonso PERSON
+name: Joy PERSON
+fullname: Joy Onyinyechi PERSON
+middle name: Onyinyechi PERSON
+surname: Joy PERSON
+name: Adaugo PERSON
+fullname: Adaugo Ifeoma PERSON
+middle name: Ifeoma PERSON
+surname: Adaugo PERSON
+name: Chukwuka PERSON
+fullname: Chukwuka Nnabuike PERSON
+middle name: Nnabuike PERSON
+surname: Chukwuka PERSON
+name: Chinonso PERSON
+fullname: Chinonso Okechukwu PERSON
+middle name: Okechukwu PERSON
+surname: Chinonso PERSON
+name: Blessing PERSON
+fullname: Blessing Nkechi PERSON
+middle name: Nkechi PERSON
+surname: Blessing PERSON
