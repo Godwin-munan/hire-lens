@@ -18,10 +18,13 @@ module.exports = async (config, options, targetOptions) => {
         configType: 'flat',
         extensions: ['ts', 'js', 'html'],
       }),
-      new WebpackNotifierPlugin({
-        title: 'Hirelens',
-        contentImage: path.join(__dirname, 'logo-jhipster.png'),
-      }),
+      //      ,
+      //      new WebpackNotifierPlugin({
+      //        title: 'Hirelens',
+      //        contentImage: path.join(__dirname, 'logo-jhipster.png'),
+      //        contentImage: null,
+      //        suppressSuccess: true, // Suppress success notifications
+      //      }),
     );
   }
 
