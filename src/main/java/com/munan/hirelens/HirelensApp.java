@@ -8,6 +8,7 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
+import opennlp.tools.namefind.NameFinderME;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -105,4 +106,20 @@ public class HirelensApp {
             env.getActiveProfiles().length == 0 ? env.getDefaultProfiles() : env.getActiveProfiles()
         );
     }
+    /**
+     * Static method to initialize the NLP model.
+     *
+     * @param modelFilePath     The path to the trained model file (.bin).
+     * @param trainingDataPath  The path to the training data file (.txt).
+     * @return A NameFinderME instance with the trained/loaded model.
+     */
+    //    private static NameFinderME initializeNLPModel(String modelFilePath, String trainingDataPath) {
+    //        try {
+    //            ModelTrainer modelTrainer = new ModelTrainer(modelFilePath, trainingDataPath);
+    //            return modelTrainer.getNameFinder();
+    //        } catch (Exception e) {
+    //            // Log the error or handle gracefully
+    //            throw new RuntimeException("Failed to initialize NLP Model", e);
+    //        }
+    //    }
 }
