@@ -173,15 +173,17 @@ jhipster:
 nlp:
   training-data:
     path:
-      person: classpath:data/person.training.data.txt
-      education: classpath:data/education.training.data.txt
-      location: classpath:data/location.training.data.txt
-      skills: classpath:data/skills.training.data.txt
-      company: classpath:data/company.training.data.txt
+      first: 'classpath:data/en-custom-sent.train'
+      person: 'classpath:data/person-custom-sent.train'
+      education: 'classpath:data/education.training.data.txt'
+      location: 'classpath:data/location.training.data.txt'
+      skills: 'classpath:data/skills.training.data.txt'
+      company: 'classpath:data/company.training.data.txt'
   training-model:
     path:
-      person: classpath:models/en-ner-person.bin
-      education: classpath:models/en-ner-education.bin
-      location: classpath:models/en-ner-location.bin
-      skills: classpath:models/en-ner-skills.bin
-      company: classpath:models/en-ner-company.bin
+      first: 'classpath:models/en-ner-custom.bin'
+      person: 'classpath:models/en-ner-person.bin'
+      education: 'classpath:models/en-ner-education.bin'
+      location: 'classpath:models/en-ner-location.bin'
+      skills: 'classpath:models/en-ner-skills.bin'
+      company: 'classpath:models/en-ner-company.bin'
