@@ -22,6 +22,7 @@ public class NLPProperties {
         @Setter
         public static class Path {
 
+            private String first;
             private String person;
             private String education;
             private String location;
@@ -40,6 +41,7 @@ public class NLPProperties {
         @Setter
         public static class Path {
 
+            private String first;
             private String person;
             private String education;
             private String location;

@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import lombok.Getter;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,39 +16,47 @@ public class ModelTrainerService {
 
     private final Map<ModelTypes, ModelTrainer> modelTrainerMap = new HashMap<>();
 
-    public ModelTrainerService(NLPProperties nlpProperties) {
+    public ModelTrainerService(NLPProperties nlpProperties, ResourceLoader resourceLoader) {
         validatePaths(nlpProperties);
         // Initialize model trainers dynamically based on ModelTypes
         modelTrainerMap.put(
             ModelTypes.PERSON,
-            new ModelTrainer(nlpProperties.getTrainingModel().getPath().getPerson(), nlpProperties.getTrainingData().getPath().getPerson())
+            new ModelTrainer(
+                nlpProperties.getTrainingModel().getPath().getPerson(),
+                nlpProperties.getTrainingData().getPath().getPerson(),
+                resourceLoader
+            )
         );
         modelTrainerMap.put(
             ModelTypes.EDUCATION,
             new ModelTrainer(
                 nlpProperties.getTrainingModel().getPath().getEducation(),
-                nlpProperties.getTrainingData().getPath().getEducation()
+                nlpProperties.getTrainingData().getPath().getEducation(),
+                resourceLoader
             )
         );
         modelTrainerMap.put(
             ModelTypes.COMPANY,
             new ModelTrainer(
                 nlpProperties.getTrainingModel().getPath().getCompany(),
-                nlpProperties.getTrainingData().getPath().getCompany()
+                nlpProperties.getTrainingData().getPath().getCompany(),
+                resourceLoader
             )
         );
         modelTrainerMap.put(
             ModelTypes.LOCATION,
             new ModelTrainer(
                 nlpProperties.getTrainingModel().getPath().getLocation(),
-                nlpProperties.getTrainingData().getPath().getLocation()
+                nlpProperties.getTrainingData().getPath().getLocation(),
+                resourceLoader
             )
         );
         modelTrainerMap.put(
             ModelTypes.SKILLS,
             new ModelTrainer(
                 nlpProperties.getTrainingModel().getPath().getSkills(),
-                nlpProperties.getTrainingData().getPath().getLocation()
+                nlpProperties.getTrainingData().getPath().getLocation(),
+                resourceLoader
             )
         );
     }
