@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "nlp")
+@ConfigurationProperties(prefix = "opennlp")
 public class NLPProperties {
 
     private final TrainingData trainingData = new TrainingData();
@@ -16,18 +16,29 @@ public class NLPProperties {
     @Setter
     public static class TrainingData {
 
-        private Path path = new Path();
+        private ClassPath classPath = new ClassPath();
+        private FilePath filePath = new FilePath();
 
         @Getter
         @Setter
-        public static class Path {
+        public static class ClassPath {
 
-            private String first;
             private String person;
-            private String education;
-            private String location;
-            private String skills;
-            private String company;
+            //            private String education;
+            //            private String location;
+            //            private String skills;
+            //            private String company;
+        }
+
+        @Getter
+        @Setter
+        public static class FilePath {
+
+            private String person;
+            //            private String education;
+            //            private String location;
+            //            private String skills;
+            //            private String company;
         }
     }
 
@@ -35,18 +46,29 @@ public class NLPProperties {
     @Setter
     public static class TrainingModel {
 
-        private Path path = new Path();
+        private TrainingData.ClassPath classPath = new TrainingData.ClassPath();
+        private TrainingData.FilePath filePath = new TrainingData.FilePath();
 
         @Getter
         @Setter
-        public static class Path {
+        public static class ClassPath {
 
-            private String first;
             private String person;
-            private String education;
-            private String location;
-            private String skills;
-            private String company;
+            //            private String education;
+            //            private String location;
+            //            private String skills;
+            //            private String company;
+        }
+
+        @Getter
+        @Setter
+        public static class FilePath {
+
+            private String person;
+            //            private String education;
+            //            private String location;
+            //            private String skills;
+            //            private String company;
         }
     }
 
