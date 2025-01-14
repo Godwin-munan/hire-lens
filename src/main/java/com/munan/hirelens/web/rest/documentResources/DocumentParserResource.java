@@ -1,24 +1,27 @@
 package com.munan.hirelens.web.rest.documentResources;
 
 import com.munan.hirelens.service.document.DocumentParserService;
+import com.munan.hirelens.service.languageModel.FileSanitizationService;
+import java.io.IOException;
 import java.util.Map;
+import lombok.RequiredArgsConstructor;
+import org.apache.tika.exception.TikaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class DocumentParserResource {
 
     private final DocumentParserService docParserService;
+    private final FileSanitizationService fileSanitizationService;
 
-    public DocumentParserResource(DocumentParserService docParserService) {
-        this.docParserService = docParserService;
-    }
+    //public DocumentParserResource(DocumentParserService docParserService) {
+    //        this.docParserService = docParserService;
+    //    }
 
     @PostMapping("/doc/upload")
     public ResponseEntity<Map<String, Object>> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -35,5 +38,18 @@ public class DocumentParserResource {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", e.getMessage()));
         }
+    }
+
+    @GetMapping("/sanitize")
+    public String sanitizeFile() {
+        //        try {
+        //            fileSanitizationService.sanitizeFile();
+        //            return "File sanitized successfully! Check the output at /data/destination.sanitize.txt";
+        //        } catch (IOException | TikaException e) {
+        //            e.printStackTrace();
+        //            return "Failed to sanitize file: " + e.getMessage();
+        //        }
+
+        return "";
     }
 }
