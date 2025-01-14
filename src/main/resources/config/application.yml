@@ -165,7 +165,7 @@ opennlp:
       #skills: 'classpath:data/skills.training.data.train'
       #company: 'classpath:data/company.training.data.train'
     file-path:
-      person: 'src/main/resources/models/person.training.data.train'
+      person: 'src/main/resources/data/person.training.data.train'
       #education: 'src/main/resources/models/education.training.data.train'
       #location: 'src/main/resources/models/location.training.data.train'
       #skills: 'src/main/resources/models/skills.training.data.train'
