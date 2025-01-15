@@ -41,11 +41,21 @@ public class NameLangService {
         TokenizerME tokenizer = new TokenizerME(TOKENIZER_MODEL);
         String[] tokens = tokenizer.tokenize(text);
 
+        System.out.println("TEXT : " + text);
+
         NameFinderME nameFinder = new NameFinderME(NAME_FINDER_MODEL.getModelMap().get(ModelTypes.PERSON));
         Span[] nameSpans = nameFinder.find(tokens);
 
         return Arrays.stream(nameSpans)
-            .map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
+            .filter(span -> "person".equalsIgnoreCase(span.getType()))
+            .map(span -> {
+                // Retrieve tokens corresponding to this span
+                String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
+                // Add tags around the entity
+                //return "<START:" + span.getType().toUpperCase() + "> " + entity + " <END>";
+                return entity;
+            }) // Add a check for the type of the span
+            //.map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
             .collect(Collectors.joining(", "));
     }
 }
