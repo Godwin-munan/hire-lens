@@ -38,10 +38,17 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             Tika tika = new Tika();
             //System.out.println("################################File BYTES : " + Arrays.toString(inputStream.readAllBytes()));
 
-            String detectedType = tika.detect(inputStream);
+            //String detectedType = tika.detect(inputStream);
+            String rawText = tika.parseToString(inputStream);
 
-            return tika.parseToString(inputStream);
+            return rawText
+                //.replaceAll("(?m)^[-•*\\d]+\\s*", "") // Remove bullets and numbering
+                .replaceAll("(?m)^[\\s]*\n", "")
+                .replaceAll("[?\\$#*:]+", "") // Remove ?, $, #, *, and :
+                .replaceAll("\\s+", " ") // Normalize whitespace
+                .trim(); // Trim leading and trailing spaces
         }
+        //Note: Error is handled in calling function
     }
 
     private Map<String, Object> extractDetailsFromText(String text) throws IOException {
