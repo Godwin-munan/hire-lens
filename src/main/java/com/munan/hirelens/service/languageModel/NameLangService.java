@@ -47,15 +47,23 @@ public class NameLangService {
         Span[] nameSpans = nameFinder.find(tokens);
 
         return Arrays.stream(nameSpans)
-            .filter(span -> "person".equalsIgnoreCase(span.getType()))
-            .map(span -> {
-                // Retrieve tokens corresponding to this span
-                String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
-                // Add tags around the entity
-                //return "<START:" + span.getType().toUpperCase() + "> " + entity + " <END>";
-                return entity;
-            }) // Add a check for the type of the span
+            //.filter(span -> "skill".equalsIgnoreCase(span.getType()))
+            //.map(span -> {
+            // Retrieve tokens corresponding to this span
+            //String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
+            // Add tags around the entity
+            //return "<START:" + span.getType().toUpperCase() + "> " + entity + " <END>";
+            //return entity;
+            //return span;
+            //}) // Add a check for the type of the span
             //.map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
+            .map(span -> {
+                // Retrieve tokens corresponding to this span and return them as a single string
+                String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
+                System.out.println("#########################################Span Type : " + span.getType());
+                //System.out.println("#########################################Extracted Entity: " + entity); // Print the entity for debugging
+                return entity;
+            })
             .collect(Collectors.joining(", "));
     }
 }
