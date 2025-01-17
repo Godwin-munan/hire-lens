@@ -4,10 +4,14 @@ import com.munan.hirelens.enums.ModelTypes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import opennlp.tools.namefind.NameFinderME;
+import opennlp.tools.namefind.RegexNameFinder;
 import opennlp.tools.namefind.TokenNameFinderModel;
+import opennlp.tools.tokenize.SimpleTokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.Span;
@@ -38,8 +42,23 @@ public class NameLangService {
     }
 
     public String extractNames(String text) {
-        TokenizerME tokenizer = new TokenizerME(TOKENIZER_MODEL);
+        //TokenizerME tokenizer = new TokenizerME(TOKENIZER_MODEL);
+        SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
         String[] tokens = tokenizer.tokenize(text);
+
+        // Define regex patterns for names, emails, URLs, and phone numbers
+        //        Pattern[] patterns = new Pattern[] {
+        //            // Names
+        //            Pattern.compile("\\b[A-Z][a-z]+\\s[A-Z][a-z]+\\b"), // Full name
+        //            // Emails
+        //            Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"),
+        //            // URLs
+        //            Pattern.compile("https?://(?:www\\.)?[a-zA-Z0-9./\\-_]+"),
+        //            // Phone numbers
+        //            Pattern.compile("\\+?[0-9\\-\\s()]{7,15}")
+        //        };
+        //
+        //        RegexNameFinder regexFinder = new RegexNameFinder(patterns, text);
 
         System.out.println("TEXT : " + text);
 
@@ -47,7 +66,7 @@ public class NameLangService {
         Span[] nameSpans = nameFinder.find(tokens);
 
         return Arrays.stream(nameSpans)
-            //.filter(span -> "skill".equalsIgnoreCase(span.getType()))
+            .filter(span -> "skill".equalsIgnoreCase(span.getType()))
             //.map(span -> {
             // Retrieve tokens corresponding to this span
             //String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
@@ -58,6 +77,7 @@ public class NameLangService {
             //}) // Add a check for the type of the span
             //.map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
             .map(span -> {
+                //nameFinder.clearAdaptiveData();
                 // Retrieve tokens corresponding to this span and return them as a single string
                 String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
                 System.out.println("#########################################Span Type : " + span.getType());
