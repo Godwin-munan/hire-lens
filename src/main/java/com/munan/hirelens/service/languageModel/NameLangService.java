@@ -66,7 +66,7 @@ public class NameLangService {
         Span[] nameSpans = nameFinder.find(tokens);
 
         return Arrays.stream(nameSpans)
-            .filter(span -> "skill".equalsIgnoreCase(span.getType()))
+            .filter(span -> "person".equalsIgnoreCase(span.getType()))
             //.map(span -> {
             // Retrieve tokens corresponding to this span
             //String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
