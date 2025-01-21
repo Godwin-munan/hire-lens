@@ -80,6 +80,10 @@ public class NameLangService {
                 //nameFinder.clearAdaptiveData();
                 // Retrieve tokens corresponding to this span and return them as a single string
                 String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
+
+                //String[] subArray = Arrays.copyOfRange(tokens, span.getStart(), span.getEnd());
+                //String entity = (subArray.length > 0) ? subArray[0] : "";
+
                 System.out.println("#########################################Span Type : " + span.getType());
                 //System.out.println("#########################################Extracted Entity: " + entity); // Print the entity for debugging
                 return entity;
