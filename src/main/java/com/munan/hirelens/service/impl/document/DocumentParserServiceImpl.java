@@ -44,8 +44,8 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             return rawText
                 //.replaceAll("(?m)^[-•*\\d]+\\s*", "") // Remove bullets and numbering
                 .replaceAll("(?m)^[\\s]*\n", "")
-                .replaceAll("[\\?\\$#*-]+", "") // Remove ?, $, #, *, and :
-                //.replaceAll("[?]+", "")
+                .replaceAll("[?\\$#*-]+", "") // Remove ?, $, #, *, and :
+                .replaceAll("[?]+", "")
                 //.replaceAll("\\s+", " ") // Normalize whitespace
                 .trim(); // Trim leading and trailing spaces
         }
