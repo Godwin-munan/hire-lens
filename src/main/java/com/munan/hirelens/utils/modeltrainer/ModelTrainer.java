@@ -149,7 +149,7 @@ public class ModelTrainer {
         // Prepare training parameters (adjust as needed)
         TrainingParameters params = new TrainingParameters();
         params.put(TrainingParameters.ITERATIONS_PARAM, 100);
-        params.put(TrainingParameters.CUTOFF_PARAM, 3);
+        params.put(TrainingParameters.CUTOFF_PARAM, 1);
 
         TokenNameFinderFactory factory = new TokenNameFinderFactory();
 
