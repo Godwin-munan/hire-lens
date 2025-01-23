@@ -46,20 +46,6 @@ public class NameLangService {
         SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
         String[] tokens = tokenizer.tokenize(text);
 
-        // Define regex patterns for names, emails, URLs, and phone numbers
-        //        Pattern[] patterns = new Pattern[] {
-        //            // Names
-        //            Pattern.compile("\\b[A-Z][a-z]+\\s[A-Z][a-z]+\\b"), // Full name
-        //            // Emails
-        //            Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"),
-        //            // URLs
-        //            Pattern.compile("https?://(?:www\\.)?[a-zA-Z0-9./\\-_]+"),
-        //            // Phone numbers
-        //            Pattern.compile("\\+?[0-9\\-\\s()]{7,15}")
-        //        };
-        //
-        //        RegexNameFinder regexFinder = new RegexNameFinder(patterns, text);
-
         System.out.println("TEXT : " + text);
 
         NameFinderME nameFinder = new NameFinderME(NAME_FINDER_MODEL.getModelMap().get(ModelTypes.PERSON));
@@ -67,27 +53,8 @@ public class NameLangService {
 
         return Arrays.stream(nameSpans)
             .filter(span -> "person".equalsIgnoreCase(span.getType()))
-            //.map(span -> {
-            // Retrieve tokens corresponding to this span
-            //String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
-            // Add tags around the entity
-            //return "<START:" + span.getType().toUpperCase() + "> " + entity + " <END>";
-            //return entity;
-            //return span;
-            //}) // Add a check for the type of the span
-            //.map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
-            .map(span -> {
-                //nameFinder.clearAdaptiveData();
-                // Retrieve tokens corresponding to this span and return them as a single string
-                String entity = String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd()));
-
-                //String[] subArray = Arrays.copyOfRange(tokens, span.getStart(), span.getEnd());
-                //String entity = (subArray.length > 0) ? subArray[0] : "";
-
-                System.out.println("#########################################Span Type : " + span.getType());
-                //System.out.println("#########################################Extracted Entity: " + entity); // Print the entity for debugging
-                return entity;
-            })
-            .collect(Collectors.joining(", "));
+            .map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
+            .collect(Collectors.joining(", "))
+            .split(",")[0];
     }
 }
