@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
+import org.apache.tika.language.translate.Translator;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,26 +27,25 @@ public class DocumentParserServiceImpl implements DocumentParserService {
     public Map<String, Object> parseDoc(MultipartFile file) throws IOException, TikaException {
         // Step 1: Extract text from file
         String text = extractTextFromFile(file);
-        //System.out.println("################################File String : " + text);
 
         // Step 2: Parse details using regex or NLP
-
         return extractDetailsFromText(text);
     }
 
     private String extractTextFromFile(MultipartFile file) throws IOException, TikaException {
         try (InputStream inputStream = file.getInputStream()) {
             Tika tika = new Tika();
-            //System.out.println("################################File BYTES : " + Arrays.toString(inputStream.readAllBytes()));
 
             //String detectedType = tika.detect(inputStream);
+            //Translator translator = tika.getTranslator();
+            //translator.translate()
             String rawText = tika.parseToString(inputStream);
 
             return rawText
                 //.replaceAll("(?m)^[-•*\\d]+\\s*", "") // Remove bullets and numbering
                 .replaceAll("(?m)^[\\s]*\n", "")
                 //.replaceAll("[?\\$#*-]+", "") // Remove ?, $, #, *, and :
-                .replaceAll("[?$#*-]+", "") // Remove ?, $, #, *, and :
+                .replaceAll("[?$#*\\-+]+", "") // Remove ?, $, #, *, and :
                 //.replaceAll("[?]+", "")
                 //.replaceAll("\\s+", " ") // Normalize whitespace
                 .trim(); // Trim leading and trailing spaces
