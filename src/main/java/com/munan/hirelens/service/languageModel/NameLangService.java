@@ -23,19 +23,16 @@ public class NameLangService {
 
     //private static final TokenNameFinderModel MODEL;
     private final ModelTrainerService NAME_FINDER_MODEL;
-    private static final TokenizerModel TOKENIZER_MODEL;
+
+    //private static final TokenizerModel TOKENIZER_MODEL;
 
     static {
         try (InputStream tokenizerModelStream = NameLangService.class.getResourceAsStream("/models/en-nr-lang-tokens.bin")) {
-            //            if (nameFinderModelStream == null) {
-            //                throw new RuntimeException("Name Finder model file not found in classpath: /models/en-ner-person.bin");
-            //            }
             if (tokenizerModelStream == null) {
                 throw new RuntimeException("Tokenizer model file not found in classpath: /models/en-nr-lang-tokens.bin");
             }
-
             //NAME_FINDER_MODEL = new TokenNameFinderModel(nameFinderModelStream);
-            TOKENIZER_MODEL = new TokenizerModel(tokenizerModelStream);
+            //TOKENIZER_MODEL = new TokenizerModel(tokenizerModelStream);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load models", e);
         }
@@ -53,7 +50,11 @@ public class NameLangService {
 
         return Arrays.stream(nameSpans)
             .filter(span -> "person".equalsIgnoreCase(span.getType()))
-            .map(span -> String.join(" ", Arrays.copyOfRange(tokens, span.getStart(), span.getEnd())))
+            .map(span -> {
+                String[] words = Arrays.copyOfRange(tokens, span.getStart(), span.getEnd());
+                //System.out.println("Words : " + Arrays.toString(words));
+                return String.join(" ", Arrays.copyOfRange(words, 0, Math.min(words.length, 3)));
+            })
             .collect(Collectors.joining(", "))
             .split(",")[0];
     }
