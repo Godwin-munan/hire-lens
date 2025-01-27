@@ -1,5 +1,6 @@
 package com.munan.hirelens.config;
 
+import java.time.Duration;
 import java.util.Collections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,7 @@ public class MysqlTestContainer implements SqlTestContainer {
                 .withDatabaseName("hirelens")
                 .withTmpFs(Collections.singletonMap("/testtmpfs", "rw"))
                 .withLogConsumer(new Slf4jLogConsumer(LOG))
+                //.withStartupTimeout(Duration.ofSeconds(120))
                 .withReuse(true);
         }
         if (!mysqlContainer.isRunning()) {
