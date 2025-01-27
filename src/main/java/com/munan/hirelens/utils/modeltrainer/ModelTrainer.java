@@ -97,17 +97,20 @@ public class ModelTrainer {
             throw new IllegalStateException("Model file path is null for model type: " + modelType);
         }
 
-        Optional<InputStream> trainingDataInputStream = resolveClasspathResource(trainingDataClassPath);
-        if (trainingDataInputStream.isEmpty()) {
-            throw new IllegalStateException("Training data input stream is null for path: " + trainingDataClassPath);
-        }
+        InputStream trainingDataInputStream = resolveClasspathResource(trainingDataClassPath).orElseThrow(() ->
+            new IllegalStateException("Training data input stream is null for path: " + trainingDataClassPath)
+        );
 
+        // Resolve the model input stream
         Optional<InputStream> modelInputStream = resolveClasspathResource(modelClassPath);
 
         if (modelInputStream.isPresent()) {
-            return loadExistingModel(modelInputStream.get());
+            // Use orElseThrow with a custom exception supplier
+            return loadExistingModel(
+                modelInputStream.orElseThrow(() -> new IllegalStateException("Model input stream is null for path: " + modelClassPath))
+            );
         } else {
-            return trainNewModel(modelType, trainingDataInputStream.get());
+            return trainNewModel(modelType, trainingDataInputStream);
         }
     }
 
