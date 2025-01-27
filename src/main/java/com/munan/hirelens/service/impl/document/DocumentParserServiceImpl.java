@@ -41,13 +41,14 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             //translator.translate()
             String rawText = tika.parseToString(inputStream);
 
+            //for (char c : rawText.toCharArray()) {
+            //    System.out.println("Char: " + c + " | Unicode: " + (int) c);
+            //}
+
             return rawText
-                //.replaceAll("(?m)^[-•*\\d]+\\s*", "") // Remove bullets and numbering
                 .replaceAll("(?m)^[\\s]*\n", "")
-                //.replaceAll("[?\\$#*-]+", "") // Remove ?, $, #, *, and :
-                .replaceAll("[?$#*\\-+]+", "") // Remove ?, $, #, *, and :
-                //.replaceAll("[?]+", "")
-                //.replaceAll("\\s+", " ") // Normalize whitespace
+                .replaceAll("[?$#*]+", "") // Remove ?, $, #, *, and :
+                .replaceAll("[\u2022\u00B7\u2013]", "-") // Replace bullet (\u2022), middle dot (\u00B7), and en dash (\u2013) with a hyphen (-)
                 .trim(); // Trim leading and trailing spaces
         }
         //Note: Error is handled in calling function
