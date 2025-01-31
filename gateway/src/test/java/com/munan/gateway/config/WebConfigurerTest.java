@@ -12,8 +12,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import jakarta.servlet.*;
 import java.io.File;
 import java.util.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.mock.env.MockEnvironment;
@@ -28,13 +30,31 @@ import tech.jhipster.config.JHipsterProperties;
  */
 class WebConfigurerTest {
 
+    //    private WebConfigurer webConfigurer;
+    //
+    //    private MockServletContext servletContext;
+    //
+    //    private MockEnvironment env;
+    //
+    //    private JHipsterProperties props;
+    //
+    //    @BeforeEach
+    //    public void setup() {
+    //        servletContext = spy(new MockServletContext());
+    //        doReturn(mock(FilterRegistration.Dynamic.class)).when(servletContext).addFilter(anyString(), any(Filter.class));
+    //        doReturn(mock(ServletRegistration.Dynamic.class)).when(servletContext).addServlet(anyString(), any(Servlet.class));
+    //
+    //        env = new MockEnvironment();
+    //        props = new JHipsterProperties();
+    //
+    //        webConfigurer = new WebConfigurer(env, props);
+    //    }
+
     private WebConfigurer webConfigurer;
-
     private MockServletContext servletContext;
-
     private MockEnvironment env;
-
     private JHipsterProperties props;
+    private MockMvc mockMvc;
 
     @BeforeEach
     public void setup() {
@@ -44,11 +64,22 @@ class WebConfigurerTest {
 
         env = new MockEnvironment();
         props = new JHipsterProperties();
-
         webConfigurer = new WebConfigurer(env, props);
+
+        mockMvc = MockMvcBuilders.standaloneSetup(new WebConfigurerTestController()).addFilters(webConfigurer.corsFilter()).build();
+    }
+
+    @AfterEach
+    void tearDown() {
+        mockMvc = null;
+        servletContext = null;
+        env = null;
+        props = null;
+        webConfigurer = null;
     }
 
     @Test
+    @Timeout(value = 30)
     void shouldCustomizeServletContainer() {
         env.setActiveProfiles(JHipsterConstants.SPRING_PROFILE_PRODUCTION);
         UndertowServletWebServerFactory container = new UndertowServletWebServerFactory();
@@ -62,6 +93,7 @@ class WebConfigurerTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void shouldCorsFilterOnApiPath() throws Exception {
         props.getCors().setAllowedOrigins(Collections.singletonList("other.domain.com"));
         props.getCors().setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
@@ -91,6 +123,7 @@ class WebConfigurerTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void shouldCorsFilterOnOtherPath() throws Exception {
         props.getCors().setAllowedOrigins(Collections.singletonList("*"));
         props.getCors().setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
@@ -107,6 +140,7 @@ class WebConfigurerTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void shouldCorsFilterDeactivatedForNullAllowedOrigins() throws Exception {
         props.getCors().setAllowedOrigins(null);
 
@@ -119,6 +153,7 @@ class WebConfigurerTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void shouldCorsFilterDeactivatedForEmptyAllowedOrigins() throws Exception {
         props.getCors().setAllowedOrigins(new ArrayList<>());
 

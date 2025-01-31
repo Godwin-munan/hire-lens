@@ -47,7 +47,6 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                     //testValues = testValues.and("spring.datasource.username=" + prodTestContainer.getTestContainer().getUsername());
                     //testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());
 
-                    System.out.println("########################################BEFORE ");
                     testValues = testValues.and(
                         "spring.datasource.url=jdbc:postgresql://localhost:5432/lens_gateway_test?ssl=false&options=-c%20timezone%3DUTC"
                     );
@@ -55,7 +54,6 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                     testValues = testValues.and("spring.datasource.password=1234");
                     testValues = testValues.and("spring.datasource.driver-class-name=org.postgresql.Driver");
                     testValues = testValues.and("spring.test.database.replace=none");
-                    System.out.println("########################################AFTER ");
                 }
                 testValues.applyTo(context);
             }

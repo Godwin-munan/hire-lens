@@ -3,11 +3,14 @@ package com.munan.gateway.config.opennlp;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Configuration
 @ConfigurationProperties(prefix = "opennlp")
+//@ConstructorBinding
 public class NLPProperties {
 
     private final TrainingData trainingData = new TrainingData();

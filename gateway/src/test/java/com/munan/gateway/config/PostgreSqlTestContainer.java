@@ -33,7 +33,6 @@ public class PostgreSqlTestContainer implements SqlTestContainer {
     public void initialize() {
         try {
             LOG.info("Connecting to real PostgreSQL database at {}", databaseUrl);
-            System.out.println("######################ENTER HERE " + databaseUrl + " " + username + " " + password);
             connection = DriverManager.getConnection(databaseUrl, username, password);
         } catch (SQLException e) {
             throw new RuntimeException("Failed to connect to PostgreSQL", e);
