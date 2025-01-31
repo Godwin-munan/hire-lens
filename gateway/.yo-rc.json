@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "gateway",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "angular",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1738223748206,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": [],
+    "feignClient": true,
+    "jhipsterVersion": "8.8.0",
+    "jwtSecretKey": "ODQyZDc2NTc1ZGEwNWNlZTYyOWIxNjhjMTU3OTFhMTViNWU4MjZhMjU3NmRlM2QyMWVkOGY0OTJhYmMxYTRiMDJhMWI1YjVhYTQzZTk2OWEyZWNmYjA5NmMwMWRlMGIxZGVjNzkxZDU3Njk5NDYyMDA0MWNjZTE1MzBkZjI5ZjI=",
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "en",
+    "packageName": "com.munan.gateway",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": "9090",
+    "serviceDiscoveryType": "consul",
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": false
+  }
+}

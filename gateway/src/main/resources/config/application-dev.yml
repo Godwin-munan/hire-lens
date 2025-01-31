@@ -1,0 +1,300 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+feign:
+  circuitbreaker:
+    enabled: true
+
+logging:
+  level:
+    liquibase: DEBUG
+#  level:
+#    ROOT: DEBUG
+#    tech.jhipster: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    com.munan.gateway: DEBUG
+#  file:
+#    name: ./app_dev.log
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include:
+          - configprops
+          - env
+          - health
+          - info
+          - jhimetrics
+          - jhiopenapigroups
+          - logfile
+          - loggers
+          - prometheus
+          - threaddump
+          - caches
+          - liquibase
+  endpoint:
+    health:
+      show-details: when_authorized
+      roles: 'ROLE_ADMIN'
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState,db
+    jhimetrics:
+      enabled: true
+  info:
+    git:
+      mode: full
+    env:
+      enabled: true
+  health:
+    mail:
+      enabled: false # When using the MailService, configure an SMTP server and set this to true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+        step: 60
+  observations:
+    key-values:
+      application: ${spring.application.name}
+  metrics:
+    enable:
+      http: true
+      jvm: true
+      logback: true
+      process: true
+      system: true
+    distribution:
+      percentiles-histogram:
+        all: true
+      percentiles:
+        all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+    data:
+      repository:
+        autotime:
+          enabled: true
+    tags:
+      application: ${spring.application.name}
+
+  zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0 # report 100% of traces
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: static/**
+    livereload:
+      enabled: false # we use Webpack dev server + BrowserSync for livereload
+  #  docker:
+  #    compose:
+  #      enabled: true
+  #      profiles:
+  #        active: dev
+  jackson:
+    serialization:
+      indent-output: true
+
+  #  cloud:
+  #    consul:
+  #      config:
+  #        enable: false
+  #        fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
+  #        format: yaml
+  #        profile-separator: '-'
+  #      discovery:
+  #        enable: false
+  #        prefer-ip-address: true
+  #        tags:
+  #          - profile=${spring.profiles.active}
+  #          - version='@project.version@'
+  #          - git-version=${git.commit.id.describe:}
+  #          - git-commit=${git.commit.id.abbrev:}
+  #          - git-branch=${git.branch:}
+  #      host: localhost
+  #      port: 8500
+  #      instanceId: dev-gateway
+  #      service-name: dev-gateway
+  #    gateway:
+  #      default-filters:
+  #        - JWTRelay
+  #      discovery:
+  #        locator:
+  #          enabled: true
+  #          lower-case-service-id: true
+  #          predicates:
+  #            - name: Path
+  #              args:
+  #                pattern: "'/services/'+serviceId.toLowerCase()+'/**'"
+  #          filters:
+  #            - name: RewritePath
+  #              args:
+  #                regexp: "'/services/' + serviceId.toLowerCase() + '/(?<remaining>.*)'"
+  #                replacement: "'/${remaining}'"
+  #      httpclient:
+  #        pool:
+  #          max-connections: 1000
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lens_gateway?ssl=false&options=-c%20timezone%3DUTC
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:1234}
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+      hibernate.timezone.default_storage: NORMALIZE
+      hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+      # modify batch size as necessary
+      hibernate.jdbc.batch_size: 25
+      hibernate.order_inserts: true
+      hibernate.order_updates: true
+      hibernate.query.fail_on_pagination_over_collection_fetch: true
+      hibernate.query.in_clause_parameter_padding: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    enabled: true
+    contexts: dev, faker
+    url: jdbc:postgresql://localhost:5432/lens_gateway?ssl=false&options=-c%20timezone%3DUTC
+    user: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:1234}
+    change-log: classpath:config/liquibase/master.xml
+  messages:
+    cache-duration: PT1S # 1 second, see the ISO 8601 standard
+    basename: i18n/messages
+  thymeleaf:
+    cache: false
+    mode: HTML
+
+  jmx:
+    enabled: false
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    problemdetails:
+      enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          authority-prefix: ''
+          authorities-claim-name: auth
+  task:
+    execution:
+      thread-name-prefix: hire-lens-task-
+      pool:
+        core-size: 2
+        max-size: 50
+        queue-capacity: 10000
+    scheduling:
+      thread-name-prefix: hire-lens-scheduling-
+      pool:
+        size: 2
+  output:
+    ansi:
+      console-available: true
+
+server:
+  port: 9090
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        forward-headers-strategy: native # make sure requests the proxy uri instead of the server one
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    use-root-path: true
+    path: /webjars
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+    groups:
+      enabled: true
+    version: OPENAPI_3_0
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+jhipster:
+  cache: # Cache configuration
+    ehcache: # Ehcache configuration
+      time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
+      max-entries: 100 # Number of objects in each cache entry
+  # CORS is disabled by default on microservices, as you should access them through a gateway.
+  # If you want to enable it, please uncomment the configuration below.
+  # cors:
+  #   allowed-origins: "http://localhost:9000,https://localhost:9000"
+  #   allowed-methods: "*"
+  #   allowed-headers: "*"
+  #   exposed-headers: "Authorization,Link,X-Total-Count"
+  #   allow-credentials: true
+  #   max-age: 1800
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: ODQyZDc2NTc1ZGEwNWNlZTYyOWIxNjhjMTU3OTFhMTViNWU4MjZhMjU3NmRlM2QyMWVkOGY0OTJhYmMxYTRiMDJhMWI1YjVhYTQzZTk2OWEyZWNmYjA5NmMwMWRlMGIxZGVjNzkxZDU3Njk5NDYyMDA0MWNjZTE1MzBkZjI5ZjI=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
+  logging:
+    use-json-format: false # By default, logs are not in Json format
+    logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+      enabled: false
+      host: localhost
+      port: 5000
+      ring-buffer-size: 512
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration, like in the JHipsterProperties above
+#
+# More documentation is available at:
+# https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# application:
