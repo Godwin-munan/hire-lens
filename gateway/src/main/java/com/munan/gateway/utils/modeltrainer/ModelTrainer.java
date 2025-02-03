@@ -146,7 +146,7 @@ public class ModelTrainer {
      * @return Trained TokenNameFinderModel for the specific entity type.
      * @throws IOException If an I/O error occurs.
      */
-    private TokenNameFinderModel trainNewModel(ModelTypes modelType, InputStream trainingDataFile) throws IOException {
+    protected TokenNameFinderModel trainNewModel(ModelTypes modelType, InputStream trainingDataFile) throws IOException {
         // TODO: LOG - trainNewModel Method _ starting...
 
         // Prepare training parameters (adjust as needed)
@@ -268,7 +268,7 @@ public class ModelTrainer {
         return new NameFinderME(model);
     }
 
-    private Optional<InputStream> resolveClasspathResource(String path) throws IOException {
+    protected Optional<InputStream> resolveClasspathResource(String path) throws IOException {
         if (path.startsWith("classpath:")) {
             // Handle classpath resource loading
             try {

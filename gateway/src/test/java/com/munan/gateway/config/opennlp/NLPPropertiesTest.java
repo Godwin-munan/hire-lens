@@ -10,6 +10,7 @@ import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -27,25 +28,15 @@ public class NLPPropertiesTest {
     @Autowired
     private NLPProperties nlpProperties;
 
-    //    private NLPProperties.TrainingModel.ClassPath modelClassPath;
-    //    NLPProperties.TrainingModel.FilePath modelFilePath;
-
-    @Before(value = "")
-    void setup(ExtensionContext context) {
-        //        if (context.getTestMethod().isPresent() && !context.getTestMethod().get().isAnnotationPresent(SkipSetup.class)) {
-        //
-        //            modelClassPath = new NLPProperties.TrainingModel.ClassPath();
-        //            modelFilePath = new NLPProperties.TrainingModel.FilePath();
-        //
-        //        }
-
-    }
+    @BeforeEach
+    void setup() {}
 
     @AfterEach
     void tearDown() throws Exception {}
 
     @Test
     @SkipSetup
+    @Timeout(value = 30)
     void testTrainingDataPropertiesBinding() {
         assertNotNull(nlpProperties);
         assertNotNull(nlpProperties.getTrainingData());
@@ -58,6 +49,7 @@ public class NLPPropertiesTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void testTrainingModelPropertiesBinding() {
         assertNotNull(nlpProperties);
         assertNotNull(nlpProperties.getTrainingModel());
@@ -70,6 +62,7 @@ public class NLPPropertiesTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void testTrainingDataGettersAndSetters() {
         NLPProperties.TrainingData.ClassPath classPath = new NLPProperties.TrainingData.ClassPath();
         classPath.setPerson("new-path");
@@ -83,6 +76,7 @@ public class NLPPropertiesTest {
     }
 
     @Test
+    @Timeout(value = 30)
     void testTrainingModelGettersAndSetters() {
         NLPProperties.TrainingModel.ClassPath classPath = new NLPProperties.TrainingModel.ClassPath();
         classPath.setPerson("new-path");

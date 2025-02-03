@@ -57,6 +57,7 @@ class WebConfigurerTest {
     private MockMvc mockMvc;
 
     @BeforeEach
+    @Timeout(value = 30)
     public void setup() {
         servletContext = spy(new MockServletContext());
         doReturn(mock(FilterRegistration.Dynamic.class)).when(servletContext).addFilter(anyString(), any(Filter.class));
