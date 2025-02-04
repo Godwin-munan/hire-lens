@@ -65,7 +65,8 @@ public class ModelTrainer {
      * @throws IOException If an I/O error occurs.
      */
     public TokenNameFinderModel ensureModel(ModelTypes modelType) throws IOException {
-        System.out.println("##################################EnsureModel Method _ starting... cl ");
+        // TODO: LOG - ##################################EnsureModel Method _ starting... cl
+
         //        if (Objects.isNull(modelFilePath)) {
         //            throw new IllegalStateException("Model file path is null for model type: " + modelType);
         //        }
@@ -121,7 +122,7 @@ public class ModelTrainer {
      * @return Loaded TokenNameFinderModel.
      * @throws IOException If an I/O error occurs.
      */
-    private TokenNameFinderModel loadExistingModel(InputStream modelFile) throws IOException {
+    TokenNameFinderModel loadExistingModel(InputStream modelFile) throws IOException {
         System.out.println("##################################LoadExistingModel Method _ starting...  : ");
         //try (InputStream modelStream = new FileInputStream(modelFile)) {
         //        try (InputStream modelStream = modelFile) {
@@ -146,7 +147,7 @@ public class ModelTrainer {
      * @return Trained TokenNameFinderModel for the specific entity type.
      * @throws IOException If an I/O error occurs.
      */
-    protected TokenNameFinderModel trainNewModel(ModelTypes modelType, InputStream trainingDataFile) throws IOException {
+    TokenNameFinderModel trainNewModel(ModelTypes modelType, InputStream trainingDataFile) throws IOException {
         // TODO: LOG - trainNewModel Method _ starting...
 
         // Prepare training parameters (adjust as needed)
@@ -172,30 +173,23 @@ public class ModelTrainer {
 
         // Validate the input stream
         if (trainingDataFile == null) {
-            System.out.println(
-                "##################################CreateNameSampleStream Method _ exception _ illegalArgument-exception : "
-            );
+            // TODO: LOG - ##################################CreateNameSampleStream Method _ exception _ illegalArgument-exception :
             throw new IllegalArgumentException("Training data input stream is null.");
         }
 
         if (!trainingDataFile.markSupported()) {
-            System.out.println("##################################CreateNameSampleStream Method _ exception _ io-exception : ");
+            // TODO: LOG - ##################################CreateNameSampleStream Method _ exception _ io-exception :
             throw new IOException("Training data input stream does not support mark/reset.");
         }
 
-        System.out.println("##################################CreateNameSampleStream Method _ inputStream _ before use : ");
         // Use InputStreamFactory that returns the training data file InputStream
         InputStreamFactory inputStreamFactory = () -> trainingDataFile;
-        System.out.println("##################################CreateNameSampleStream Method _ inputStream _ after use : ");
 
-        System.out.println("##################################CreateNameSampleStream Method _ inputStream _ before try-catch : ");
         // Create the line stream and name sample stream but don't close them here
         ObjectStream<String> lineStream = new PlainTextByLineStream(inputStreamFactory, StandardCharsets.UTF_8);
-        NameSampleDataStream nameSampleDataStream = new NameSampleDataStream(lineStream);
 
-        System.out.println("##################################CreateNameSampleStream Method _ inputStream _ after stream creation : ");
         // Return the nameSampleDataStream without closing it
-        return nameSampleDataStream;
+        return new NameSampleDataStream(lineStream);
     }
 
     private TokenNameFinderModel trainEntityModel(
@@ -224,7 +218,7 @@ public class ModelTrainer {
         // Serialize and save the model
         try (OutputStream modelOut = new FileOutputStream(modelFileForEntityTypePath.toFile())) {
             model.serialize(modelOut);
-            System.out.println("################################## SaveModel Method _ Model saved to path: " + modelFileForEntityTypePath);
+            // TODO: LOG - ################################## SaveModel Method _ Model saved to path:    + modelFileForEntityTypePath
         }
 
         // Update the modelFilePath to the new location
@@ -268,19 +262,19 @@ public class ModelTrainer {
         return new NameFinderME(model);
     }
 
-    protected Optional<InputStream> resolveClasspathResource(String path) throws IOException {
+    Optional<InputStream> resolveClasspathResource(String path) throws IOException {
         if (path.startsWith("classpath:")) {
             // Handle classpath resource loading
             try {
                 Resource resource = resourceLoader.getResource(path);
                 if (!resource.exists()) {
-                    System.out.println("########################Resource not found: " + path);
+                    // TODO: LOG - ########################Resource not found:   + path
                     return Optional.empty();
                 }
 
                 return Optional.of(resource.getInputStream()); // Return InputStream for the classpath resource
             } catch (Exception e) {
-                System.out.println("########################Error loading classpath resource: " + path);
+                // TODO: LOG - ########################Error loading classpath resource:  + path
                 return Optional.empty();
             }
         }
@@ -289,7 +283,7 @@ public class ModelTrainer {
         try {
             return Optional.of(new FileInputStream(path)); // Return InputStream for the file path
         } catch (Exception e) {
-            System.out.println("########################File not found: " + path);
+            // TODO: LOG - ########################File not found:  + path
             return Optional.empty();
         }
     }
