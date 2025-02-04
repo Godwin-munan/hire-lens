@@ -96,19 +96,13 @@ public class ModelTrainer {
      * @throws IOException If an I/O error occurs.
      */
     TokenNameFinderModel loadExistingModel(InputStream modelFile) throws IOException {
-        System.out.println("##################################LoadExistingModel Method _ starting...  : ");
-        //try (InputStream modelStream = new FileInputStream(modelFile)) {
-        //        try (InputStream modelStream = modelFile) {
-        //            return new TokenNameFinderModel(modelStream);
-        //        }
+        // TODO: LOG - ##################################LoadExistingModel Method _ starting...  :
 
-        System.out.println("##################################LoadExistingModel Method _ before try!  : ");
-        //        try (ObjectInputStream objectInputStream = new ObjectInputStream(modelFile)) {
         try (InputStream modelStream = modelFile) {
-            System.out.println("##################################LoadExistingModel Method _ after try!  : ");
-            //return (TokenNameFinderModel) objectInputStream.readObject();
+            // TODO: LOG - ##################################LoadExistingModel Method _ after try!  :
             return new TokenNameFinderModel(modelStream);
         } catch (IOException e) {
+            // TODO: LOG - ##################################Failed to load model!  :
             throw new RuntimeException("Failed to load model", e);
         }
     }
