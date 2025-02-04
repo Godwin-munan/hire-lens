@@ -65,34 +65,7 @@ public class ModelTrainer {
      * @throws IOException If an I/O error occurs.
      */
     public TokenNameFinderModel ensureModel(ModelTypes modelType) throws IOException {
-        // TODO: LOG - ##################################EnsureModel Method _ starting... cl
-
-        //        if (Objects.isNull(modelFilePath)) {
-        //            throw new IllegalStateException("Model file path is null for model type: " + modelType);
-        //        }
-        //
-        //        InputStream modelInputStream;
-        //        InputStream trainingDataInputStream;
-        //
-        //        System.out.println("##################################EnsureModel Method _ before _ synchronized block : ");
-        //
-        //        synchronized (this) {
-        ////            modelFile = new File(modelFilePath);
-        //            trainingDataInputStream = resolveClasspathResource(trainingDataPath);
-        //            modelInputStream = resolveClasspathResource(modelFilePath);
-        //
-        //        }
-        //        System.out.println("##################################EnsureModel Method _ after _ synchronized block : ");
-        //
-        //        if (Objects.nonNull(modelInputStream)) {
-        //            // TODO: LOG - Loading existing model for: modelType
-        //            System.out.println("##################################EnsureModel Method _ calling _ loadExistingModel Method _ file : " + trainingDataInputStream.markSupported());
-        //            return loadExistingModel(modelInputStream);
-        //        } else {
-        //            // TODO: LOG - Training new model for: modelType
-        //            System.out.println("##################################EnsureModel Method _ calling _ trainNewModel Method _ file : " + trainingDataInputStream.markSupported());
-        //            return trainNewModel(modelType, trainingDataInputStream);
-        //        }
+        // TODO: LOG - ##################################EnsureModel Method _ starting...
 
         if (Objects.isNull(modelClassPath)) {
             throw new IllegalStateException("Model file path is null for model type: " + modelType);
