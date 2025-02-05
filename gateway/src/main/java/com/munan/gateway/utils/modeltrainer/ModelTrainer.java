@@ -135,7 +135,7 @@ public class ModelTrainer {
         }
     }
 
-    private ObjectStream<NameSample> createNameSampleStream(InputStream trainingDataFile) throws IOException {
+    ObjectStream<NameSample> createNameSampleStream(InputStream trainingDataFile) throws IOException {
         // TODO: LOG - createNameSampleStream Method _ starting...
 
         // Validate the input stream
@@ -159,7 +159,7 @@ public class ModelTrainer {
         return new NameSampleDataStream(lineStream);
     }
 
-    private TokenNameFinderModel trainEntityModel(
+    TokenNameFinderModel trainEntityModel(
         ModelTypes modelType,
         ObjectStream<NameSample> nameSampleStream,
         TrainingParameters params,
@@ -168,7 +168,7 @@ public class ModelTrainer {
         return NameFinderME.train("en", modelType.name(), nameSampleStream, params, factory);
     }
 
-    private void saveModel(TokenNameFinderModel model, ModelTypes modelType) throws IOException, URISyntaxException {
+    void saveModel(TokenNameFinderModel model, ModelTypes modelType) throws IOException, URISyntaxException {
         // TODO: LOG - saveModel Method _ starting...
 
         // Resolve the target file path by removing 'classpath:' and preparing the absolute path
@@ -186,11 +186,6 @@ public class ModelTrainer {
         try (OutputStream modelOut = new FileOutputStream(modelFileForEntityTypePath.toFile())) {
             model.serialize(modelOut);
             // TODO: LOG - ################################## SaveModel Method _ Model saved to path:    + modelFileForEntityTypePath
-        }
-
-        // Update the modelFilePath to the new location
-        synchronized (this) {
-            updatedModelFilePath = modelFileForEntityTypePath.toString();
         }
         // Log the successful save
         // TODO: LOG - saveModel Method _ completed _ new model saved successfully!
