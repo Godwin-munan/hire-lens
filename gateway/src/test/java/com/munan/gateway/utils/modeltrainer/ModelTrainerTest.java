@@ -334,4 +334,106 @@ public class ModelTrainerTest {
         String fileContent = Files.readString(tempFile, StandardCharsets.UTF_8);
         assertEquals("dummy content", fileContent, "File content should match the expected output.");
     }
+
+    @Test
+    void testResolveClasspathResource_ResourceExists() throws IOException {
+        String dummyContent = "dummy content";
+        InputStream dummyStream = new ByteArrayInputStream(dummyContent.getBytes());
+
+        // Create a mock Resource and ResourceLoader.
+        Resource resource = mock(Resource.class);
+        when(resource.exists()).thenReturn(true);
+        when(resource.getInputStream()).thenReturn(dummyStream);
+
+        ResourceLoader resourceLoader = mock(ResourceLoader.class);
+        String path = "classpath:dummy.txt";
+        when(resourceLoader.getResource(path)).thenReturn(resource);
+
+        // Create a ModelTrainer with dummy paths and the mocked resourceLoader.
+        ModelTrainer trainer = new ModelTrainer(
+            "dummyTrainingData",
+            "dummyTrainingDataFile",
+            "dummyModelClassPath",
+            "dummyModelFilePath",
+            resourceLoader
+        );
+
+        // Act
+        Optional<InputStream> result = trainer.resolveClasspathResource(path);
+
+        // Assert
+        assertTrue(result.isPresent(), "Expected resource to be found.");
+
+        //String resultContent = new String(result.get().readAllBytes());
+        String resultContent = new String(result.orElseThrow(() -> new AssertionError("Expected resource to be found")).readAllBytes());
+        assertEquals(dummyContent, resultContent, "Resource content should match the dummy content.");
+    }
+
+    // Test when the path starts with "classpath:" but the resource does not exist.
+    @Test
+    void testResolveClasspathResource_ResourceNotExists() throws IOException {
+        // Arrange
+        Resource resource = mock(Resource.class);
+        when(resource.exists()).thenReturn(false);
+
+        ResourceLoader resourceLoader = mock(ResourceLoader.class);
+        String path = "classpath:dummy.txt";
+        when(resourceLoader.getResource(path)).thenReturn(resource);
+
+        ModelTrainer trainer = new ModelTrainer(
+            "dummyTrainingData",
+            "dummyTrainingDataFile",
+            "dummyModelClassPath",
+            "dummyModelFilePath",
+            resourceLoader
+        );
+
+        Optional<InputStream> result = trainer.resolveClasspathResource(path);
+
+        assertFalse(result.isPresent(), "Expected empty Optional when resource does not exist.");
+    }
+
+    // Test when the path starts with "classpath:" but an exception is thrown during resource loading.
+    @Test
+    void testResolveClasspathResource_ResourceException() throws IOException {
+        // Arrange
+        ResourceLoader resourceLoader = mock(ResourceLoader.class);
+        String path = "classpath:dummy.txt";
+        when(resourceLoader.getResource(path)).thenThrow(new RuntimeException("Simulated error"));
+
+        ModelTrainer trainer = new ModelTrainer(
+            "dummyTrainingData",
+            "dummyTrainingDataFile",
+            "dummyModelClassPath",
+            "dummyModelFilePath",
+            resourceLoader
+        );
+
+        // Act
+        Optional<InputStream> result = trainer.resolveClasspathResource(path);
+
+        // Assert
+        assertFalse(result.isPresent(), "Expected empty Optional when an exception is thrown during resource loading.");
+    }
+
+    // Test when the path does not start with "classpath:" and the file does not exist.
+    @Test
+    void testResolveClasspathResource_FileNotExists() throws IOException {
+        // Arrange
+        String nonExistentPath = "nonexistent_file.txt";
+        ResourceLoader dummyLoader = mock(ResourceLoader.class);
+        ModelTrainer trainer = new ModelTrainer(
+            "dummyTrainingData",
+            "dummyTrainingDataFile",
+            "dummyModelClassPath",
+            "dummyModelFilePath",
+            dummyLoader
+        );
+
+        // Act
+        Optional<InputStream> result = trainer.resolveClasspathResource(nonExistentPath);
+
+        // Assert
+        assertFalse(result.isPresent(), "Expected empty Optional when file is not found.");
+    }
 }
