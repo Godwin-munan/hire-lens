@@ -191,7 +191,7 @@ public class ModelTrainer {
         // TODO: LOG - saveModel Method _ completed _ new model saved successfully!
     }
 
-    private String formatModelFileName(String modelFilePath, ModelTypes modelType) {
+    String formatModelFileName(String modelFilePath, ModelTypes modelType) {
         Map<ModelTypes, String> modelTypeMapping = Map.of(
             ModelTypes.PERSON,
             "person",
