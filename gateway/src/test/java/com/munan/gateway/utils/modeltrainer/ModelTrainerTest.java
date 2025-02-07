@@ -31,10 +31,10 @@ import org.springframework.core.io.ResourceLoader;
 
 public class ModelTrainerTest {
 
-    private String TRAINING_DATA_CLASS_PATH = "classpath:data/test/person.training.data.train";
-    private String TRAINING_DATA_FILE_PATH = "src/main/resources/data/test/person.training.data.train";
-    private String MODEL_CLASS_PATH = "classpath:models/test/en-ner-person.bin";
-    private String MODEL_FILE_PATH = "src/main/resources/test/models/en-ner-person.bin";
+    private final String TRAINING_DATA_CLASS_PATH = "classpath:data/test/person.training.data.train";
+    private final String TRAINING_DATA_FILE_PATH = "src/main/resources/data/test/person.training.data.train";
+    private final String MODEL_CLASS_PATH = "classpath:models/test/en-ner-person.bin";
+    private final String MODEL_FILE_PATH = "src/main/resources/test/models/en-ner-person.bin";
 
     private AutoCloseable closeable;
 
