@@ -19,6 +19,7 @@ feign:
 logging:
   level:
     liquibase: DEBUG
+    #org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: WARN
 #  level:
 #    ROOT: DEBUG
 #    tech.jhipster: DEBUG
@@ -240,6 +241,8 @@ server:
       cookie:
         http-only: true
         forward-headers-strategy: native # make sure requests the proxy uri instead of the server one
+  #error:
+  #  include-stacktrace: never
 
 springdoc:
   show-actuator: true

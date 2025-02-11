@@ -110,13 +110,13 @@ opennlp:
       person: 'classpath:data/person.training.data.train'
       #education: 'classpath:data/education.training.data.train'
       #location: 'classpath:data/location.training.data.train'
-      #skills: 'classpath:data/skills.training.data.train'
+      skills: 'classpath:data/skills.training.data.train'
       #company: 'classpath:data/company.training.data.train'
     file-path:
       person: 'src/main/resources/data/person.training.data.train'
       #education: 'src/main/resources/models/education.training.data.train'
       #location: 'src/main/resources/models/location.training.data.train'
-      #skills: 'src/main/resources/models/skills.training.data.train'
+      skills: 'src/main/resources/models/skills.training.data.train'
       #company: 'src/main/resources/models/company.training.data.train'
 
   training-model:
@@ -124,11 +124,11 @@ opennlp:
       person: 'classpath:models/en-ner-person.bin'
       #education: 'classpath:models/en-ner-education.bin'
       #location: 'classpath:models/en-ner-location.bin'
-      #skills: 'classpath:models/en-ner-skills.bin'
+      skills: 'classpath:models/en-ner-skills.bin'
       #company: 'classpath:models/en-ner-company.bin'
     file-path:
       person: 'src/main/resources/models/en-ner-person.bin'
       #education: 'src/main/resources/models/en-ner-education.bin'
       #location: 'src/main/resources/models/en-ner-location.bin'
-      #skills: 'src/main/resources/models/en-ner-skills.bin'
+      skills: 'src/main/resources/models/en-ner-skills.bin'
       #company: 'src/main/resources/models/en-ner-company.bin'
