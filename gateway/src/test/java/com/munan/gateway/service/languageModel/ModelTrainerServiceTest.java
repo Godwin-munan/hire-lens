@@ -11,12 +11,9 @@ import com.munan.gateway.utils.modeltrainer.ModelTrainer;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import opennlp.tools.namefind.TokenNameFinderModel;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.test.util.ReflectionTestUtils;
 
@@ -30,23 +27,31 @@ public class ModelTrainerServiceTest {
         ResourceLoader resourceLoader = mock(ResourceLoader.class);
         NLPProperties nlpProperties = mock(NLPProperties.class);
 
-        // Set up dummy stubs for the required path properties so that validatePaths doesn't throw.
-        // Assume these nested objects exist (or create minimal dummy implementations).
+        // Set up dummy stubs for training data for PERSON and SKILLS.
         NLPProperties.TrainingData trainingData = mock(NLPProperties.TrainingData.class);
         NLPProperties.TrainingData.ClassPath trainingDataClassPath = mock(NLPProperties.TrainingData.ClassPath.class);
         NLPProperties.TrainingData.FilePath trainingDataFilePath = mock(NLPProperties.TrainingData.FilePath.class);
 
         when(trainingDataClassPath.getPerson()).thenReturn("dummyTrainingDataClassPath");
         when(trainingDataFilePath.getPerson()).thenReturn("dummyTrainingDataFilePath");
+        // Stub for SKILLS:
+        when(trainingDataClassPath.getSkills()).thenReturn("dummyTrainingDataClassPath_skills");
+        when(trainingDataFilePath.getSkills()).thenReturn("dummyTrainingDataFilePath_skills");
+
         when(trainingData.getClassPath()).thenReturn(trainingDataClassPath);
         when(trainingData.getFilePath()).thenReturn(trainingDataFilePath);
 
+        // Set up dummy stubs for training model for PERSON and SKILLS.
         NLPProperties.TrainingModel trainingModel = mock(NLPProperties.TrainingModel.class);
         NLPProperties.TrainingData.ClassPath trainingModelClassPath = mock(NLPProperties.TrainingData.ClassPath.class);
         NLPProperties.TrainingData.FilePath trainingModelFilePath = mock(NLPProperties.TrainingData.FilePath.class);
 
         when(trainingModelClassPath.getPerson()).thenReturn("dummyTrainingModelClassPath");
         when(trainingModelFilePath.getPerson()).thenReturn("dummyTrainingModelFilePath");
+        // Stub for SKILLS:
+        when(trainingModelClassPath.getSkills()).thenReturn("dummyTrainingModelClassPath_skills");
+        when(trainingModelFilePath.getSkills()).thenReturn("dummyTrainingModelFilePath_skills");
+
         when(trainingModel.getClassPath()).thenReturn(trainingModelClassPath);
         when(trainingModel.getFilePath()).thenReturn(trainingModelFilePath);
 
