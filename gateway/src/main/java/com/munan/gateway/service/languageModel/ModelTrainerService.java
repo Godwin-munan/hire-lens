@@ -35,6 +35,17 @@ public class ModelTrainerService {
                 resourceLoader
             )
         );
+
+        modelTrainerMap.put(
+            ModelTypes.SKILLS,
+            new ModelTrainer(
+                nlpProperties.getTrainingData().getClassPath().getSkills(),
+                nlpProperties.getTrainingData().getFilePath().getSkills(),
+                nlpProperties.getTrainingModel().getClassPath().getSkills(),
+                nlpProperties.getTrainingModel().getFilePath().getSkills(),
+                resourceLoader
+            )
+        );
         //        modelTrainerMap.put(
         //            ModelTypes.EDUCATION,
         //            new ModelTrainer(
@@ -114,11 +125,13 @@ public class ModelTrainerService {
         //        ) {
         //            throw new IllegalStateException("Model or training data path is null for model type: LOCATION");
         //        }
-        //        if (
-        //            Objects.isNull(nlpProperties.getTrainingModel().getPath().getSkills()) ||
-        //            Objects.isNull(nlpProperties.getTrainingData().getPath().getSkills())
-        //        ) {
-        //            throw new IllegalStateException("Model or training data path is null for model type: SKILLS");
-        //        }
+        if (
+            Objects.isNull(nlpProperties.getTrainingData().getClassPath().getSkills()) ||
+            Objects.isNull(nlpProperties.getTrainingData().getFilePath().getSkills()) ||
+            Objects.isNull(nlpProperties.getTrainingModel().getClassPath().getSkills()) ||
+            Objects.isNull(nlpProperties.getTrainingModel().getFilePath().getSkills())
+        ) {
+            throw new IllegalStateException("Model or training data path is null for model type: SKILLS");
+        }
     }
 }
