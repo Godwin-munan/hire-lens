@@ -67,6 +67,7 @@ public class LoggingAspect {
      */
     @AfterThrowing(pointcut = "applicationPackagePointcut() && springBeanPointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
+        /*
         if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT))) {
             logger(joinPoint).error(
                 "Exception in {}() with cause = '{}' and exception = '{}'",
@@ -82,6 +83,14 @@ public class LoggingAspect {
                 e.getCause() != null ? String.valueOf(e.getCause()) : "NULL"
             );
         }
+
+         */
+
+        logger(joinPoint).error(
+            "Exception in {}() with cause = {}",
+            joinPoint.getSignature().getName(),
+            e.getCause() != null ? String.valueOf(e.getCause()) : "NULL"
+        );
     }
 
     /**
@@ -94,9 +103,19 @@ public class LoggingAspect {
     @Around("applicationPackagePointcut() && springBeanPointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Logger log = logger(joinPoint);
+        String methodName = joinPoint.getSignature().getName();
+
         if (log.isDebugEnabled()) {
             log.debug("Enter: {}() with argument[s] = {}", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs()));
         }
+
+        // Conditionally block the specific method
+        if ("uploadFile".equals(methodName)) {
+            log.warn("Blocking method {} execution", methodName);
+            throw new UnsupportedOperationException("This method is blocked.");
+            // Alternatively, return a specific value if the method signature allows
+        }
+
         try {
             Object result = joinPoint.proceed();
             if (log.isDebugEnabled()) {
