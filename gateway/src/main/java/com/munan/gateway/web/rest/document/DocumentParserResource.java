@@ -2,8 +2,14 @@ package com.munan.gateway.web.rest.document;
 
 import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.FileSanitizationService;
+import com.munan.gateway.utils.ApiResponse;
+import com.munan.gateway.utils.mapper.ApiMapper;
+import com.munan.gateway.web.rest.errors.FileEmptyException;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
+import org.apache.tika.exception.TikaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,38 +17,33 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api")
-//@RequiredArgsConstructor
 public class DocumentParserResource {
 
     private final DocumentParserService docParserService;
-    private final FileSanitizationService fileSanitizationService;
 
-    public DocumentParserResource(DocumentParserService docParserService, FileSanitizationService fileSanitizationService) {
+    //private final FileSanitizationService fileSanitizationService;
+
+    public DocumentParserResource(
+        DocumentParserService docParserService
+        //, FileSanitizationService fileSanitizationService
+    ) {
         this.docParserService = docParserService;
-        this.fileSanitizationService = fileSanitizationService;
+        //this.fileSanitizationService = fileSanitizationService;
     }
-
-    //public DocumentParserResource(DocumentParserService docParserService) {
-    //        this.docParserService = docParserService;
-    //    }
 
     @PostMapping("/doc/upload")
-    public ResponseEntity<Map<String, Object>> uploadFile(@RequestParam("file") MultipartFile file) {
-        try {
-            // Validate file
-            if (file.isEmpty()) {
-                return ResponseEntity.badRequest().body(Map.of("error", "File is empty!"));
-            }
-
-            // Pass file to service for parsing
-            Map<String, Object> parsedData = docParserService.parseDoc(file);
-
-            return ResponseEntity.ok(parsedData);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", e.getMessage()));
+    public ResponseEntity<ApiResponse> uploadFile(@RequestParam("file") MultipartFile file)
+        throws TikaException, IOException, FileEmptyException {
+        if (file.isEmpty()) {
+            throw new FileEmptyException("Oops! File is empty, please check.");
         }
-    }
 
+        // Pass file to service for parsing
+        Map<String, Object> parsedData = docParserService.parseDoc(file);
+
+        return ResponseEntity.ok(ApiMapper.mapDocumentFieldsToApiResponse(parsedData));
+    }
+    /*
     @GetMapping("/sanitize")
     public String sanitizeFile() {
         //        try {
@@ -55,4 +56,6 @@ public class DocumentParserResource {
 
         return "";
     }
+
+     */
 }
