@@ -30,7 +30,7 @@ public class NLPProperties {
             private String person;
             //            private String education;
             //            private String location;
-            //            private String skills;
+            private String skills;
             //            private String company;
         }
 
@@ -41,7 +41,7 @@ public class NLPProperties {
             private String person;
             //            private String education;
             //            private String location;
-            //            private String skills;
+            private String skills;
             //            private String company;
         }
     }
@@ -60,7 +60,7 @@ public class NLPProperties {
             private String person;
             //            private String education;
             //            private String location;
-            //            private String skills;
+            private String skills;
             //            private String company;
         }
 
@@ -71,7 +71,7 @@ public class NLPProperties {
             private String person;
             //            private String education;
             //            private String location;
-            //            private String skills;
+            private String skills;
             //            private String company;
         }
     }
