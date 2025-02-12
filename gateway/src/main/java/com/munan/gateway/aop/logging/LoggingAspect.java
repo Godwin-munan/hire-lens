@@ -110,11 +110,14 @@ public class LoggingAspect {
         }
 
         // Conditionally block the specific method
+        /*
         if ("uploadFile".equals(methodName)) {
             log.warn("Blocking method {} execution", methodName);
             throw new UnsupportedOperationException("This method is blocked.");
             // Alternatively, return a specific value if the method signature allows
         }
+
+         */
 
         try {
             Object result = joinPoint.proceed();
