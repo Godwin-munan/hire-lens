@@ -1,12 +1,10 @@
 package com.munan.gateway.aop.logging;
 
+import com.munan.gateway.enums.ModelTypes;
 import java.util.Arrays;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
@@ -48,6 +46,25 @@ public class LoggingAspect {
     public void applicationPackagePointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
+
+    //    @Pointcut(
+    //        "within(com.munan.gateway.service.languageModel.ModelTrainerService)"
+    //    )
+    //    public void modelTrainingAndLoadingPointcut() {
+    //        // Method is empty as this is just a Pointcut, the implementations are in the advices.
+    //    }
+    //
+    //    @Before("modelTrainingAndLoadingPointcut()")
+    //    public void logBeforeModelTrainer(JoinPoint joinPoint){
+    //
+    //        String methodName = joinPoint.getSignature().getName();
+    //        //ModelTypes type = (ModelTypes)joinPoint.getArgs()[0];
+    //
+    //        if(methodName.equals("trainAllModels")){
+    //            logger(joinPoint).info("##################### Start model training for {} type", methodName);
+    //        }
+    //
+    //    }
 
     /**
      * Retrieves the {@link Logger} associated to the given {@link JoinPoint}.
