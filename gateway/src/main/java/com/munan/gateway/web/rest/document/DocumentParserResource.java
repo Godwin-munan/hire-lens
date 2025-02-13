@@ -3,15 +3,21 @@ package com.munan.gateway.web.rest.document;
 import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.FileSanitizationService;
 import com.munan.gateway.utils.ApiResponse;
+import com.munan.gateway.utils.Util;
 import com.munan.gateway.utils.mapper.ApiMapper;
 import com.munan.gateway.web.rest.errors.FileEmptyException;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.apache.tika.exception.TikaException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api")
 public class DocumentParserResource {
 
+    private static final Logger log = LoggerFactory.getLogger(DocumentParserResource.class);
     private final DocumentParserService docParserService;
 
     //private final FileSanitizationService fileSanitizationService;
@@ -32,7 +39,7 @@ public class DocumentParserResource {
     }
 
     @PostMapping("/doc/upload")
-    public ResponseEntity<ApiResponse> uploadFile(@RequestParam("file") MultipartFile file)
+    public ResponseEntity<ApiResponse> uploadFile(@RequestParam("file") MultipartFile file, HttpServletRequest request)
         throws TikaException, IOException, FileEmptyException {
         if (file.isEmpty()) {
             throw new FileEmptyException("Oops! File is empty, please check.");
@@ -40,6 +47,15 @@ public class DocumentParserResource {
 
         // Pass file to service for parsing
         Map<String, Object> parsedData = docParserService.parseDoc(file);
+
+        log.info("#####################CUSTOM-LOG : Request Client-IP {} ", Util.getClientIp(request));
+        //log.info("#####################CUSTOM-LOG : Auth-type {} ", Objects.requireNonNull(request.getAuthType()));
+
+        while (request.getHeaderNames().asIterator().hasNext()) {
+            String x = request.getHeaderNames().asIterator().next();
+
+            log.info("#####################CUSTOM-LOG : Header {} ", Objects.requireNonNull(x));
+        }
 
         return ResponseEntity.ok(ApiMapper.mapDocumentFieldsToApiResponse(parsedData));
     }
