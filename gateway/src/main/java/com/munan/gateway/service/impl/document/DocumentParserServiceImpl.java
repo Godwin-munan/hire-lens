@@ -8,18 +8,22 @@ import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.NameLangService;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class DocumentParserServiceImpl implements DocumentParserService {
 
+    private static final Logger log = LoggerFactory.getLogger(DocumentParserServiceImpl.class);
     private final NameLangService nameLangService;
 
     public DocumentParserServiceImpl(NameLangService nameLangService) {
@@ -60,7 +64,6 @@ public class DocumentParserServiceImpl implements DocumentParserService {
 
     private Map<String, Object> extractDetailsFromText(String text) throws IOException {
         Map<String, Object> details = new HashMap<>();
-
         // Example regex for basic data extraction
 
         //        Matcher emailMatcher = RegexUtils.emailGroup(text);
@@ -79,7 +82,9 @@ public class DocumentParserServiceImpl implements DocumentParserService {
         // Return results as a map
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put(PERSON_LABEL, extractedPersonName);
+        log.info("#####################CUSTOM-LOG : Extracted {} name from uploaded document", extractedPersonName);
         resultMap.put(SKILLS_LABEL, extractedSkills);
+        log.info("#####################CUSTOM-LOG : Extracted {} skills from uploaded document", extractedSkills);
 
         // Add more regex or NLP for names, skills, etc.
         return resultMap;
