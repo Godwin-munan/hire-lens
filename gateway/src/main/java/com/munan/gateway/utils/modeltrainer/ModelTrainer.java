@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +16,8 @@ import opennlp.tools.util.InputStreamFactory;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.TrainingParameters;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
@@ -36,6 +39,8 @@ public class ModelTrainer {
     private final String modelClassPath;
     private final String modelFilePath;
     private final ResourceLoader resourceLoader;
+
+    private static final Logger log = LoggerFactory.getLogger(ModelTrainer.class);
 
     /**
      * Constructor to initialize ModelTrainer with model and training data paths.
@@ -79,10 +84,23 @@ public class ModelTrainer {
         Optional<InputStream> modelInputStream = resolveClasspathResource(modelClassPath);
 
         if (modelInputStream.isPresent()) {
+            long startTime = System.currentTimeMillis();
+
+            log.info("#####################CUSTOM-LOG : Started loading... model of type {} at {}", modelType.name(), Instant.now());
+
             // Use orElseThrow with a custom exception supplier
-            return loadExistingModel(
+            TokenNameFinderModel loadedTokenNameFinderModel = loadExistingModel(
                 modelInputStream.orElseThrow(() -> new IllegalStateException("Model input stream is null for path: " + modelClassPath))
             );
+
+            long duration = System.currentTimeMillis() - startTime;
+            log.info(
+                "#####################CUSTOM-LOG : Successfully loaded training model of type {} in {} seconds",
+                modelType.name(),
+                (duration / 1000F)
+            );
+
+            return loadedTokenNameFinderModel;
         } else {
             return trainNewModel(modelType, trainingDataInputStream);
         }
@@ -100,9 +118,11 @@ public class ModelTrainer {
 
         try (InputStream modelStream = modelFile) {
             // TODO: LOG - ##################################LoadExistingModel Method _ after try!  :
+
             return new TokenNameFinderModel(modelStream);
         } catch (IOException e) {
             // TODO: LOG - ##################################Failed to load model!  :
+            log.error("#####################CUSTOM-LOG : Failed to load model");
             throw new RuntimeException("Failed to load model", e);
         }
     }
@@ -125,12 +145,24 @@ public class ModelTrainer {
         TokenNameFinderFactory factory = new TokenNameFinderFactory();
 
         try (ObjectStream<NameSample> nameSampleStream = createNameSampleStream(trainingDataFile)) {
+            long startTime = System.currentTimeMillis();
+
+            log.info("#####################CUSTOM-LOG : Started training model of type {} at {}", modelType.name(), Instant.now());
+
             TokenNameFinderModel model = trainEntityModel(modelType, nameSampleStream, params, factory);
+
+            long duration = System.currentTimeMillis() - startTime;
+            log.info(
+                "#####################CUSTOM-LOG : Completed training model of type {} in {} seconds",
+                modelType.name(),
+                (duration / 1000F)
+            );
+
             // Save the trained model
             saveModel(model, modelType);
             return model;
         } catch (URISyntaxException e) {
-            // TODO: LOG - trainNewModel Method _ exception _ URISyntax-exception _ ex-message
+            log.error("#####################CUSTOM-LOG : Error during model training for type {} ", modelType.name());
             throw new RuntimeException("Error during model training for type: " + modelType, e);
         }
     }
@@ -165,7 +197,9 @@ public class ModelTrainer {
         TrainingParameters params,
         TokenNameFinderFactory factory
     ) throws IOException {
+        log.info(""); // start training...
         return NameFinderME.train("en", modelType.name(), nameSampleStream, params, factory);
+        //and successful training in the calling method
     }
 
     void saveModel(TokenNameFinderModel model, ModelTypes modelType) throws IOException, URISyntaxException {
