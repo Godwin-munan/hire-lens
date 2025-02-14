@@ -6,13 +6,12 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "parsed_document")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParsedDocument implements Serializable {
@@ -40,11 +39,11 @@ public class ParsedDocument implements Serializable {
     @Column(name = "file_name")
     private String fileName;
 
-    @Column(name = "file_type")
-    private String fileType;
+    @Column(name = "file_extension")
+    private String fileExtension;
 
     @Column(name = "file_size")
-    private Long fileSize;
+    private String fileSize;
 
     // Parsing details
     @Enumerated(EnumType.STRING)
@@ -56,10 +55,10 @@ public class ParsedDocument implements Serializable {
 
     // Duration in milliseconds (or seconds, if preferred)
     @Column(name = "parse_duration")
-    private Long parseDuration;
+    private String parseDuration;
 
     // Many-to-Many relationship with skills
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinTable(
         name = "document_skill",
         joinColumns = @JoinColumn(name = "document_id"),

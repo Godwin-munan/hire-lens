@@ -3,13 +3,12 @@ package com.munan.gateway.domain.document;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "request_metadata")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestMetadata implements Serializable {
@@ -35,7 +34,7 @@ public class RequestMetadata implements Serializable {
     private Instant requestTime;
 
     // Link back to the parsed resume
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "document_id")
     private ParsedDocument parsedDocument;
 }
