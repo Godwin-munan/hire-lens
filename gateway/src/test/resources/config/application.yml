@@ -132,3 +132,11 @@ opennlp:
       #location: 'src/main/resources/models/en-ner-location.bin'
       skills: 'src/main/resources/models/en-ner-skills.bin'
       #company: 'src/main/resources/models/en-ner-company.bin'
+
+  FILE:
+    UPLOAD:
+      MAX-SIZE:
+        IMAGE: 200
+        #maximum image size is 200kb
+        DOCUMENT: 1000
+        #maximum image size is 500kb
