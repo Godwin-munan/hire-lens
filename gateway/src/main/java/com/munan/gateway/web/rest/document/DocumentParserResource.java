@@ -1,5 +1,6 @@
 package com.munan.gateway.web.rest.document;
 
+import com.munan.gateway.domain.document.RequestMetadata;
 import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.FileSanitizationService;
 import com.munan.gateway.utils.ApiResponse;
@@ -8,6 +9,7 @@ import com.munan.gateway.utils.mapper.ApiMapper;
 import com.munan.gateway.web.rest.errors.FileEmptyException;
 import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -45,17 +47,16 @@ public class DocumentParserResource {
             throw new FileEmptyException("Oops! File is empty, please check.");
         }
 
+        RequestMetadata requestMetadata = new RequestMetadata();
+        String clientIp = Util.getClientIp(request);
+
+        requestMetadata.setRequestTime(Instant.now());
+        requestMetadata.setClientIp(clientIp);
+        requestMetadata.setRequestUri(request.getRequestURI() != null ? request.getRequestURI() : "unknown request-uri");
+        requestMetadata.setHttpMethod(request.getMethod() != null ? request.getMethod() : "unknown request-method");
+
         // Pass file to service for parsing
-        Map<String, Object> parsedData = docParserService.parseDoc(file);
-
-        log.info("#####################CUSTOM-LOG : Request Client-IP {} ", Util.getClientIp(request));
-        //log.info("#####################CUSTOM-LOG : Auth-type {} ", Objects.requireNonNull(request.getAuthType()));
-
-        while (request.getHeaderNames().asIterator().hasNext()) {
-            String x = request.getHeaderNames().asIterator().next();
-
-            log.info("#####################CUSTOM-LOG : Header {} ", Objects.requireNonNull(x));
-        }
+        Map<String, Object> parsedData = docParserService.parseDoc(file, requestMetadata);
 
         return ResponseEntity.ok(ApiMapper.mapDocumentFieldsToApiResponse(parsedData));
     }
