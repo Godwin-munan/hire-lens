@@ -7,6 +7,9 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.munan.gateway.domain.document.RequestMetadata;
+import com.munan.gateway.repository.RequestMetadataRepository;
+import com.munan.gateway.repository.SkillRepository;
 import com.munan.gateway.service.languageModel.NameLangService;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -14,16 +17,24 @@ import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DocumentParserServiceImplTest {
 
     private DocumentParserServiceImpl documentParserService;
 
+    @Autowired
+    RequestMetadataRepository requestMetadataRepository;
+
+    @Autowired
+    SkillRepository skillRepository;
+
     @BeforeEach
     void setup() {
         // Create a mock for the dependency
         NameLangService nameLangService = mock(NameLangService.class);
+
         // Stub the behavior of extractNames to return a dummy name
         when(nameLangService.extractNames(anyString(), eq("PERSON"))).thenReturn("Godwin");
 
@@ -31,7 +42,7 @@ public class DocumentParserServiceImplTest {
         when(nameLangService.extractNames(anyString(), eq("SKILLS"))).thenReturn("Java,Spring,Hibernate");
 
         // Create the service under test
-        documentParserService = new DocumentParserServiceImpl(nameLangService);
+        documentParserService = new DocumentParserServiceImpl(nameLangService, requestMetadataRepository, skillRepository);
     }
 
     @Test
@@ -46,8 +57,10 @@ public class DocumentParserServiceImplTest {
         MultipartFile file = mock(MultipartFile.class);
         when(file.getInputStream()).thenReturn(is);
 
+        RequestMetadata requestMetadata = new RequestMetadata();
+
         // Call the public parseDoc() method which will use the private methods internally.
-        Map<String, Object> result = documentParserService.parseDoc(file);
+        Map<String, Object> result = documentParserService.parseDoc(file, requestMetadata);
 
         // Assert that the returned map contains the expected key ("PERSON") with the stubbed name from NameLangService.
         assertNotNull(result.get("PERSON"));

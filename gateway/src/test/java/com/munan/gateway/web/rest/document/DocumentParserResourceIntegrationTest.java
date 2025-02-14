@@ -50,7 +50,7 @@ public class DocumentParserResourceIntegrationTest {
         dummyResult.put("SKILLS", java.util.List.of("Java", "Spring", "Hibernate"));
 
         // Stub the service method to return our dummy result.
-        when(docParserService.parseDoc(any(MockMultipartFile.class))).thenReturn(dummyResult);
+        when(docParserService.parseDoc(any(MockMultipartFile.class), any())).thenReturn(dummyResult);
 
         // Perform the file upload request.
         mockMvc
