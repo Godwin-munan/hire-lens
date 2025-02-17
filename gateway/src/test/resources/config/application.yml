@@ -13,6 +13,13 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure=warn: warn
+
 spring:
   application:
     name: gateway
