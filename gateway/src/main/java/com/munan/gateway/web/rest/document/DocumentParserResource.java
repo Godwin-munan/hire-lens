@@ -48,10 +48,10 @@ public class DocumentParserResource {
         }
 
         RequestMetadata requestMetadata = new RequestMetadata();
-        String clientIp = Util.getClientIp(request);
 
         requestMetadata.setRequestTime(Instant.now());
-        requestMetadata.setClientIp(clientIp);
+        requestMetadata.setClientIp(Util.getClientIp(request));
+        requestMetadata.setUserAgent(Util.getUserAgent(request));
         requestMetadata.setRequestUri(request.getRequestURI() != null ? request.getRequestURI() : "unknown request-uri");
         requestMetadata.setHttpMethod(request.getMethod() != null ? request.getMethod() : "unknown request-method");
 
