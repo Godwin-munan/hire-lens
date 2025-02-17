@@ -7,17 +7,20 @@ import com.munan.gateway.domain.document.ParsedDocument;
 import com.munan.gateway.domain.document.RequestMetadata;
 import com.munan.gateway.domain.document.Skill;
 import com.munan.gateway.enums.ModelTypes;
+import com.munan.gateway.enums.ParseStatus;
 import com.munan.gateway.repository.RequestMetadataRepository;
 import com.munan.gateway.repository.SkillRepository;
 import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.NameLangService;
 import com.munan.gateway.utils.Util;
+import com.munan.gateway.utils.regex.RegexUtils;
 import jakarta.persistence.Column;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
+import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.apache.tika.Tika;
@@ -48,11 +51,9 @@ public class DocumentParserServiceImpl implements DocumentParserService {
     @Override
     public Map<String, Object> parseDoc(MultipartFile file, RequestMetadata requestMetadata) throws IOException, TikaException {
         // Step 1: Extract text from file
-
         String text = extractTextFromFile(file);
 
         ParsedDocument parsedDocument = new ParsedDocument();
-        Skill skillDomain = new Skill();
 
         Instant start = Instant.now();
 
@@ -62,6 +63,16 @@ public class DocumentParserServiceImpl implements DocumentParserService {
         Long parseDuration = Duration.between(start, end).toSeconds();
 
         if (!extractDetailsFromText.isEmpty()) {
+            Matcher emailMatcher = RegexUtils.emailGroup(text);
+            if (emailMatcher.find()) {
+                parsedDocument.setEmail(emailMatcher.group().trim().toLowerCase());
+            }
+
+            Matcher phoneMatcher = RegexUtils.phoneContactGroup(text);
+            if (phoneMatcher.find()) {
+                parsedDocument.setPhone(phoneMatcher.group().trim());
+            }
+
             parsedDocument.setParseDuration(parseDuration + " seconds");
             parsedDocument.setParseTimestamp(start);
             parsedDocument.setFileExtension(Util.getFileExtension(file));
@@ -88,13 +99,27 @@ public class DocumentParserServiceImpl implements DocumentParserService {
                                 .orElseGet(() -> {
                                     Skill newSkill = new Skill();
                                     newSkill.setName(skillName);
-                                    return newSkill;
+                                    return skillRepository.save(newSkill);
                                 });
                         })
                         .collect(Collectors.toSet())
                 )
                 .orElse(Collections.emptySet());
             parsedDocument.setSkills(skills);
+
+            boolean personStatus =
+                Objects.nonNull(extractDetailsFromText.get(PERSON_LABEL)) &&
+                !"".equalsIgnoreCase(((String) extractDetailsFromText.get(PERSON_LABEL)));
+            boolean skillStatus =
+                Objects.nonNull(extractDetailsFromText.get(SKILLS_LABEL)) && !((String) extractDetailsFromText.get(PERSON_LABEL)).isEmpty();
+
+            if (personStatus && skillStatus) {
+                parsedDocument.setParseStatus(ParseStatus.SUCCESS);
+            } else if (personStatus || skillStatus) {
+                parsedDocument.setParseStatus(ParseStatus.PARTIAL);
+            } else {
+                parsedDocument.setParseStatus(ParseStatus.FAILED);
+            }
 
             requestMetadata.setParsedDocument(parsedDocument);
             requestMetadataRepository.save(requestMetadata);
