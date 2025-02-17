@@ -67,6 +67,6 @@ public class ParsedDocument implements Serializable {
     private Set<Skill> skills = new HashSet<>();
 
     // One-to-One relationship with request metadata
-    @OneToOne(mappedBy = "parsedDocument", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "parsedDocument")
     private RequestMetadata requestMetadata;
 }

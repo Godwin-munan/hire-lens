@@ -34,7 +34,7 @@ public class RequestMetadata implements Serializable {
     private Instant requestTime;
 
     // Link back to the parsed resume
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
     @JoinColumn(name = "document_id")
     private ParsedDocument parsedDocument;
 }
