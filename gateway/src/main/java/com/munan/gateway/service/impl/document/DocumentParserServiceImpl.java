@@ -151,7 +151,7 @@ public class DocumentParserServiceImpl implements DocumentParserService {
         //Note: Error is handled in calling function
     }
 
-    private Map<String, Object> extractDetailsFromText(String text) throws IOException {
+    public Map<String, Object> extractDetailsFromText(String text) throws IOException {
         Map<String, Object> details = new HashMap<>();
         // Example regex for basic data extraction
 
