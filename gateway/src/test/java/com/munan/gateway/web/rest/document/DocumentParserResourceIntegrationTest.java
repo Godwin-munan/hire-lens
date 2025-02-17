@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.munan.gateway.service.document.DocumentParserService;
+import jakarta.transaction.Transactional;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
