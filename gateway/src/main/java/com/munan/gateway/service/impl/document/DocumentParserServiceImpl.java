@@ -148,23 +148,9 @@ public class DocumentParserServiceImpl implements DocumentParserService {
                 .replaceAll("[\u2022\u00B7\u2013\u25CF]", "-") // Replace bullet (\u2022), middle dot (\u00B7), en dash (\u2013), black circle (\u25CF) with a hyphen (-)
                 .trim(); // Trim leading and trailing spaces
         }
-        //Note: Error is handled in calling function
     }
 
     public Map<String, Object> extractDetailsFromText(String text) throws IOException {
-        Map<String, Object> details = new HashMap<>();
-        // Example regex for basic data extraction
-
-        //        Matcher emailMatcher = RegexUtils.emailGroup(text);
-        //        if (emailMatcher.find()) {
-        //            details.put("email", emailMatcher.group());
-        //        }
-        //
-        //        Matcher phoneMatcher = RegexUtils.phoneContactGroup(text);
-        //        if (phoneMatcher.find()) {
-        //            details.put("phone", phoneMatcher.group());
-        //        }
-
         String extractedPersonName = nameLangService.extractNames(text, PERSON_LABEL);
         List<String> extractedSkills = List.of(nameLangService.extractNames(text, SKILLS_LABEL).trim().split(","));
 
