@@ -43,7 +43,7 @@ public class NameLangService {
         TokenizerME tokenizer = new TokenizerME(TOKENIZER_MODEL);
         String[] tokens = tokenizer.tokenize(text);
 
-        //System.out.println("TEXT : " + text);
+        System.out.println("TEXT : " + text);
 
         NameFinderME nameFinder;
         if (ModelTypes.PERSON.name().equalsIgnoreCase(key)) {
@@ -69,7 +69,7 @@ public class NameLangService {
                     return String.join(" ", words);
                 }
             })
-            .collect(Collectors.joining(", "));
+            .collect(Collectors.joining(","));
 
         if (key.equalsIgnoreCase(ModelTypes.PERSON.name())) {
             // return all the first occurrence
