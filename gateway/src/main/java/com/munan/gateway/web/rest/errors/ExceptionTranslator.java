@@ -58,18 +58,18 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
         this.env = env;
     }
 
-    //    @ExceptionHandler
-    //    public ResponseEntity<Object> handleAnyException(Throwable ex, NativeWebRequest request) {
-    //        ProblemDetailWithCause pdCause = wrapAndCustomizeProblem(ex, request);
-    //        return handleExceptionInternal((Exception) ex, pdCause, buildHeaders(ex), HttpStatusCode.valueOf(pdCause.getStatus()), request);
-    //    }
-
     @ExceptionHandler
     public ResponseEntity<Object> handleAnyException(Throwable ex, NativeWebRequest request) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
-            new ApiResponse<>("" + HttpStatus.INTERNAL_SERVER_ERROR.value(), String.join(",", ex.getMessage()))
-        );
+        ProblemDetailWithCause pdCause = wrapAndCustomizeProblem(ex, request);
+        return handleExceptionInternal((Exception) ex, pdCause, buildHeaders(ex), HttpStatusCode.valueOf(pdCause.getStatus()), request);
     }
+
+    //    @ExceptionHandler
+    //    public ResponseEntity<Object> handleAnyException(Throwable ex, NativeWebRequest request) {
+    //        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
+    //            new ApiResponse<>("" + HttpStatus.INTERNAL_SERVER_ERROR.value(), String.join(",", ex.getMessage()))
+    //        );
+    //    }
 
     @ExceptionHandler(FileEmptyException.class)
     public ResponseEntity<Object> handleFileEmptyExceptions(FileEmptyException exception, NativeWebRequest request) {
