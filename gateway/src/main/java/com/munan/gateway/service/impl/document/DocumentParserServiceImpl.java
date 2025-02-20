@@ -91,6 +91,7 @@ public class DocumentParserServiceImpl implements DocumentParserService {
                     skillStrings
                         .stream()
                         .map(String::trim)
+                        .distinct()
                         .filter(s -> !s.isEmpty())
                         .map(skillName -> {
                             // Lookup the existing skill
