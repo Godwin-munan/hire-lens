@@ -31,6 +31,9 @@ public class Util {
     public static final String PERSON_LABEL = "PERSON";
     public static final String SKILLS_LABEL = "SKILLS";
 
+    public static final String LINKEDIN_LINK = "linkedIn";
+    public static final String GITHUB_LINK = "github";
+
     @Value("${FILE.UPLOAD.MAX-SIZE.IMAGE}")
     public static long MAX_IMAGE_SIZE_BYTES;
 
