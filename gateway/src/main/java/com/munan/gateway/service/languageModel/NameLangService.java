@@ -43,7 +43,7 @@ public class NameLangService {
         TokenizerME tokenizer = new TokenizerME(TOKENIZER_MODEL);
         String[] tokens = tokenizer.tokenize(text);
 
-        System.out.println("TEXT : " + text);
+        System.out.println(text);
 
         NameFinderME nameFinder;
         if (ModelTypes.PERSON.name().equalsIgnoreCase(key)) {
