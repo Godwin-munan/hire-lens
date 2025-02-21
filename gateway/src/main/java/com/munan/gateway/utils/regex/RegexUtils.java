@@ -25,4 +25,14 @@ public class RegexUtils {
         Pattern githubLinkPattern = Pattern.compile("^https://github\\.com/[\\w-]+/?$\n");
         return githubLinkPattern.matcher(source);
     }
+
+    public static Matcher linkedInLinkGroupV2(String source) {
+        Pattern linkedinPattern = Pattern.compile("https?://(www\\.)?linkedin\\.com/[^\\s]+");
+        return linkedinPattern.matcher(source);
+    }
+
+    public static Matcher githubLinkGroupV2(String source) {
+        Pattern githubPattern = Pattern.compile("https?://(www\\.)?github\\.com/[^\\s]+");
+        return githubPattern.matcher(source);
+    }
 }
