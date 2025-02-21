@@ -1,7 +1,6 @@
 package com.munan.gateway.service.impl.document;
 
-import static com.munan.gateway.utils.Util.PERSON_LABEL;
-import static com.munan.gateway.utils.Util.SKILLS_LABEL;
+import static com.munan.gateway.utils.Util.*;
 
 import com.munan.gateway.domain.document.ParsedDocument;
 import com.munan.gateway.domain.document.RequestMetadata;
@@ -22,6 +21,7 @@ import java.time.Instant;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
@@ -71,6 +71,16 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             Matcher phoneMatcher = RegexUtils.phoneContactGroup(text);
             if (phoneMatcher.find()) {
                 parsedDocument.setPhone(phoneMatcher.group().trim());
+            }
+
+            Matcher linkedInMatcher = RegexUtils.linkedInLinkGroupV2(text);
+            if (linkedInMatcher.find()) {
+                extractDetailsFromText.put(LINKEDIN_LINK, linkedInMatcher.group().trim());
+            }
+
+            Matcher githubMatcher = RegexUtils.githubLinkGroupV2(text);
+            if (githubMatcher.find()) {
+                extractDetailsFromText.put(GITHUB_LINK, githubMatcher.group().trim());
             }
 
             parsedDocument.setParseDuration(parseDuration + " seconds");
@@ -153,13 +163,16 @@ public class DocumentParserServiceImpl implements DocumentParserService {
 
     public Map<String, Object> extractDetailsFromText(String text) throws IOException {
         String extractedPersonName = nameLangService.extractNames(text, PERSON_LABEL);
-        List<String> extractedSkills = List.of(nameLangService.extractNames(text, SKILLS_LABEL).trim().split(","));
+        List<String> extractedSkills = Stream.of(nameLangService.extractNames(text, SKILLS_LABEL).trim().split(","))
+            .distinct()
+            .limit(10)
+            .toList();
 
         // Return results as a map
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put(PERSON_LABEL, extractedPersonName);
+        resultMap.put(PERSON_LABEL.toLowerCase(), extractedPersonName);
         log.info("#####################CUSTOM-LOG : Extracted {} name from uploaded document", extractedPersonName);
-        resultMap.put(SKILLS_LABEL, extractedSkills);
+        resultMap.put(SKILLS_LABEL.toLowerCase(), extractedSkills);
         log.info("#####################CUSTOM-LOG : Extracted {} skills from uploaded document", extractedSkills);
 
         // Add more regex or NLP for names, skills, etc.
