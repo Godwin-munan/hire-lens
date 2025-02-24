@@ -26,7 +26,7 @@
     "serverPort": "9090",
     "serviceDiscoveryType": "consul",
     "syncUserWithIdp": null,
-    "testFrameworks": [],
+    "testFrameworks": ["cucumber"],
     "withAdminUi": false
   }
 }
