@@ -41,6 +41,8 @@ public class ModelTrainerTest {
     @TempDir
     Path tempDir;
 
+    //@Given("I have {int} cukes in my belly")
+
     @Mock
     private ResourceLoader resourceLoader;
 
