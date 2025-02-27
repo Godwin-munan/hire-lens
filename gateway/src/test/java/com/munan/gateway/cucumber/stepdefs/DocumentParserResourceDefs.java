@@ -45,13 +45,11 @@ public class DocumentParserResourceDefs extends StepDefs {
         Assertions.assertTrue(fileToUpload.exists(), "File should exist for test.");
     }
 
-    /*
     @Given("I have an invalid {string} file")
     public void iHaveAnInvalidFile(String filename) throws Exception {
         fileToUpload = new File("src/test/resources/document/" + filename);
         Assertions.assertTrue(fileToUpload.exists(), "File should exist for test.");
     }
-     */
 
     @Given("I have an empty file")
     public void iHaveAnEmptyFile() throws Exception {
