@@ -5,10 +5,12 @@ import static com.munan.gateway.utils.Util.*;
 import com.munan.gateway.domain.document.ParsedDocument;
 import com.munan.gateway.domain.document.RequestMetadata;
 import com.munan.gateway.domain.document.Skill;
+import com.munan.gateway.dto.experience.ExperienceResponse;
 import com.munan.gateway.enums.ModelTypes;
 import com.munan.gateway.enums.ParseStatus;
 import com.munan.gateway.repository.RequestMetadataRepository;
 import com.munan.gateway.repository.SkillRepository;
+import com.munan.gateway.service.ExperienceService;
 import com.munan.gateway.service.document.DocumentParserService;
 import com.munan.gateway.service.languageModel.NameLangService;
 import com.munan.gateway.utils.Util;
@@ -38,14 +40,18 @@ public class DocumentParserServiceImpl implements DocumentParserService {
     private final RequestMetadataRepository requestMetadataRepository;
     private final SkillRepository skillRepository;
 
+    private final ExperienceService experienceService;
+
     public DocumentParserServiceImpl(
         NameLangService nameLangService,
         RequestMetadataRepository requestMetadataRepository,
-        SkillRepository skillRepository
+        SkillRepository skillRepository,
+        ExperienceService experienceService
     ) {
         this.nameLangService = nameLangService;
         this.requestMetadataRepository = requestMetadataRepository;
         this.skillRepository = skillRepository;
+        this.experienceService = experienceService;
     }
 
     @Override
@@ -89,12 +95,12 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             parsedDocument.setFileName(Util.getNewFileName(file));
             parsedDocument.setFileSize(Util.getFileSizeInKB(file) + "KB");
 
-            String applicantName = Objects.nonNull(extractDetailsFromText.get(PERSON_LABEL))
-                ? (String) extractDetailsFromText.get(PERSON_LABEL)
+            String applicantName = Objects.nonNull(extractDetailsFromText.get(PERSON_LABEL.toLowerCase()))
+                ? (String) extractDetailsFromText.get(PERSON_LABEL.toLowerCase())
                 : "Unnamed Applicant";
             parsedDocument.setApplicantName(applicantName);
 
-            Set<Skill> skills = Optional.ofNullable(extractDetailsFromText.get(SKILLS_LABEL))
+            Set<Skill> skills = Optional.ofNullable(extractDetailsFromText.get(SKILLS_LABEL.toLowerCase()))
                 .filter(List.class::isInstance)
                 .map(list -> (List<String>) list)
                 .map(skillStrings ->
@@ -119,10 +125,11 @@ public class DocumentParserServiceImpl implements DocumentParserService {
             parsedDocument.setSkills(skills);
 
             boolean personStatus =
-                Objects.nonNull(extractDetailsFromText.get(PERSON_LABEL)) &&
-                !"".equalsIgnoreCase(((String) extractDetailsFromText.get(PERSON_LABEL)));
+                Objects.nonNull(extractDetailsFromText.get(PERSON_LABEL.toLowerCase())) &&
+                !"".equalsIgnoreCase(((String) extractDetailsFromText.get(PERSON_LABEL.toLowerCase())));
             boolean skillStatus =
-                Objects.nonNull(extractDetailsFromText.get(SKILLS_LABEL)) && !((String) extractDetailsFromText.get(PERSON_LABEL)).isEmpty();
+                Objects.nonNull(extractDetailsFromText.get(SKILLS_LABEL.toLowerCase())) &&
+                !((String) extractDetailsFromText.get(PERSON_LABEL.toLowerCase())).isEmpty();
 
             if (personStatus && skillStatus) {
                 parsedDocument.setParseStatus(ParseStatus.SUCCESS);
@@ -174,6 +181,11 @@ public class DocumentParserServiceImpl implements DocumentParserService {
         log.info("#####################CUSTOM-LOG : Extracted {} name from uploaded document", extractedPersonName);
         resultMap.put(SKILLS_LABEL.toLowerCase(), extractedSkills);
         log.info("#####################CUSTOM-LOG : Extracted {} skills from uploaded document", extractedSkills);
+
+        ExperienceResponse response = experienceService.parseResume(text);
+
+        resultMap.put("skill", response.getSkills());
+        resultMap.put("experience", response.getExperience());
 
         // Add more regex or NLP for names, skills, etc.
         return resultMap;
