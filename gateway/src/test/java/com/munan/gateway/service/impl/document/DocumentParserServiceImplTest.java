@@ -10,6 +10,7 @@ import com.munan.gateway.domain.document.RequestMetadata;
 import com.munan.gateway.domain.document.Skill;
 import com.munan.gateway.repository.RequestMetadataRepository;
 import com.munan.gateway.repository.SkillRepository;
+import com.munan.gateway.service.ExperienceService;
 import com.munan.gateway.service.languageModel.NameLangService;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -36,11 +37,19 @@ public class DocumentParserServiceImplTest {
     private SkillRepository skillRepository;
 
     @Mock
+    private ExperienceService experienceService;
+
+    @Mock
     private NameLangService nameLangService;
 
     @BeforeEach
     void setup() {
-        documentParserService = new DocumentParserServiceImpl(nameLangService, requestMetadataRepository, skillRepository);
+        documentParserService = new DocumentParserServiceImpl(
+            nameLangService,
+            requestMetadataRepository,
+            skillRepository,
+            experienceService
+        );
     }
 
     @Test
